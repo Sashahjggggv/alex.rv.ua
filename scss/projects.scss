@@ -1,0 +1,103 @@
+body {
+  background: url('../img/dark-background.webp') center / cover;
+}
+
+.footer {
+  background: #ffffff36;
+}
+
+.top {
+  height: 70%;
+  padding-top: 130px;
+
+  &__container {
+  }
+
+  &__title {
+    color: #ffa500;
+    font-size: 45px;
+  }
+
+  &__paragraf {
+    color: #fff;
+    padding-right: 20%;
+  }
+}
+
+.projects {
+  padding: 30px 0;
+
+  &__container {}
+
+  &__flex-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__project {
+    width: calc(50% - 15px);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+      & .projects__blur {
+        backdrop-filter: blur(5px);
+        background: #00000029;
+        color: #ffa500;
+        text-shadow: 1px 1px 5px #fff;
+      }
+    }
+  }
+
+  &__blur {
+    position: absolute;
+    top: 0;left: 0;z-index: 1;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0);
+    padding: 0 15%;
+    color: #ffa50000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__project-image {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .projects {
+    padding: 20px 0;
+
+    &__flex-line {
+      flex-direction: column;
+      margin-bottom: 0;
+
+      &:last-child .projects__project:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__project {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    &__blur {
+      padding: 0 10%;
+    }
+  }
+}
