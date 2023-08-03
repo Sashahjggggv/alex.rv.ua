@@ -26,17 +26,3 @@ $(window).scroll(function() {
 		st = nst;
 	}
 });
-
-
-// let iframe = document.createElement("iframe");
-// iframe.src = "https://lab.pics/";
-// let macBook = document.getElementsByClassName('view__block-pc');
-// let iPhone = document.getElementsByClassName('view__block-mobile');
-// pushIntoMac = function() {
-// 	macBook[0].appendChild(iframe);
-// }
-
-// $(window).on('load', function () {
-// 	pushIntoMac();
-// 	iPhone[0].appendChild(iframe);
-// }) 
