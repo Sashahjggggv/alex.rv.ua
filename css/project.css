@@ -11,6 +11,7 @@ body {
 .top__description {
   color: #fff;
   font-size: 22px;
+  text-align: justify;
 }
 
 .stages-title {
@@ -51,7 +52,7 @@ body {
 }
 .view__block-pc {
   position: relative;
-  width: 70%;
+  width: 74.8%;
 }
 .view__block-pc > iframe {
   position: absolute;
@@ -90,7 +91,7 @@ body {
 }
 .view__block-mobile {
   position: relative;
-  width: 21%;
+  width: 22.2%;
 }
 .view__block-mobile > iframe {
   position: absolute;
@@ -513,4 +514,33 @@ body {
   font-size: 25px;
   color: #6495ED;
   margin-bottom: 5px;
+}
+
+@media (max-width: 767px) {
+  .top {
+    padding-top: 100px;
+  }
+  .top__project-name {
+    text-align: center;
+  }
+  .view {
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .view__container {
+    height: 100%;
+  }
+  .view__block-pc {
+    display: none;
+  }
+  .view__block-mobile {
+    height: 100%;
+    width: auto;
+  }
+  .view__img-iphone {
+    width: auto;
+    height: 100%;
+  }
 }

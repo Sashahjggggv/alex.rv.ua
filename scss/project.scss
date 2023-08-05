@@ -15,6 +15,7 @@ body {
   &__description {
     color: #fff;
     font-size: 22px;
+    text-align: justify;
   }
 }
 
@@ -44,7 +45,7 @@ body {
 
   &__block-pc {
     position: relative;
-    width: 70%;
+    width: 74.8%;
 
     & > iframe {
       position: absolute;
@@ -99,7 +100,7 @@ body {
 
   &__block-mobile {
     position: relative;
-    width: 21%;
+    width: 22.2%;
 
     & > iframe {
       position: absolute;
@@ -552,5 +553,40 @@ body {
     font-size: 25px;
     color: #6495ED;
     margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  .top {
+    padding-top: 100px;
+
+    &__project-name {
+      text-align: center;
+    }
+  }
+
+  .view {
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__container {
+      height: 100%;
+    }
+
+    &__block-pc {
+      display: none;
+    }
+
+    &__block-mobile {
+      height: 100%;
+      width: auto;
+    }
+
+    &__img-iphone {
+      width: auto;
+      height: 100%;
+    }
   }
 }

@@ -186,3 +186,51 @@ window.addEventListener('input', function (e) {
     }, 300);
   }
 }, false);
+
+const iframePc = document.querySelector(".view__block-pc");
+const iframePhone = document.querySelector(".view__block-mobile");
+loadIframe = function() {
+  const iframeUrlPc = iframePc.dataset.src;
+  const iframeUrlPhone = iframePhone.dataset.src;
+  if (iframeUrlPc) {
+    iframePc.insertAdjacentHTML(
+      "beforeend",
+      '<iframe class="view__pc-iframe" src="' + iframeUrlPc + '"></iframe>'
+    )
+  }
+
+  if (iframeUrlPhone) {
+    iframePhone.insertAdjacentHTML(
+      "beforeend",
+      '<iframe class="view__iphone-iframe" src="' + iframeUrlPhone + '"></iframe>'
+    )
+  }
+}
+
+$(window).on('load', function () {
+  whenPageIsLoaded = function() {
+    loadIframe()
+  }
+  setTimeout(whenPageIsLoaded, 100);
+}) 
+
+// $.ajax({
+//   type: 'POST',
+//   url: "https://greathouse.rv.ua/",
+//   data: {},
+//   beforeSend: function(XMLHttpRequest) {
+//     //Download progress
+//     window.addEventListener ("DOMContentLoaded", (event) => {
+//       XMLHttpRequest[0].addEventListener("progress", function(evt){
+//         if (evt.lengthComputable) {  
+//           var percentComplete = evt.loaded / evt.total;
+//           console.log(percentComplete)
+//           //Do something with download progress
+//         }
+//       }, false); 
+//     })
+//   },
+//   success: function(data){
+//     console.log(data)
+//   }
+// });
