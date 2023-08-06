@@ -55,10 +55,63 @@ body {
       height: 156%;
       transform: scale(0.5) translate(-50%, -50%);
     }
+
+    &:hover {
+      & .view__full-screen-pc {
+        backdrop-filter: blur(6px);
+        background: #6494ed67;
+      }
+
+      & .view__btn-full-screen-pc {
+        transform: scale(1);
+        animation: big-full-screen-btn 0.5s ease-in 2 alternate;
+      }
+    }
   }
 
   &__img-pc {
     width: 100%;
+  }
+
+  &__full-screen-pc {
+    position: absolute;
+    top: 2.2%;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+    width: 81.8%;
+    height: 8.3%;
+    backdrop-filter: blur(0);
+    border-top-left-radius: 1% 18%;
+    border-top-right-radius: 1% 18%;
+    background: none;
+  }
+
+  &__macbook-camera {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 11%;
+  }
+
+  &__btn-full-screen-pc {
+    position: absolute;
+    top: 10%;
+    left: 0.65%;
+    height: 80%;
+    width: 5%;
+    background: #ffa600;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+  }
+
+  &__img-btn-full-screen {
+    width: 65%;
+    height: 65%;
   }
 
   &__block-link-mac {
@@ -326,13 +379,17 @@ body {
     color: #6495ED;
     font-weight: 500;
     margin-bottom: 0;
+
+    &.start {
+      margin-left: 10px;
+    }
   }
 
   &__stage-title {
     position: relative;
     border: 3px solid #6495ED;
     border-radius: 50px;
-    width: 500px;
+    width: 400px;
     height: 48px;
     overflow: hidden;
   }
@@ -340,6 +397,7 @@ body {
   &__stage-title-slider {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -404,6 +462,7 @@ body {
     text-indent: 150px;
     text-align: left;
     opacity: 0;
+    letter-spacing: 10px;
 
     &.opacity {
       opacity: 1;
@@ -420,9 +479,9 @@ body {
     background: #6495ED;
     padding: 5px 10px;
     border-radius: 25px;
-    margin: 0 10px 0 0;
     display: inline-block;
     text-indent: 0;
+    letter-spacing: normal;
   }
 }
 
@@ -443,28 +502,53 @@ body {
   }
 
   &__block-skills {
-  }
-
-  &__skill-flex-line {
-    display: flex;
-    justify-content: space-between;
-    
-    &:last-child .skills-and-team__skill {
-      margin-bottom: 0;
-    }
+    letter-spacing: 20px;
+    line-height: 80px;
   }
 
   &__skill {
-    width: 50%;
+    display: inline-flex;
+    align-items: center;
     padding: 10px 15px;
-    margin: 0 15px 15px 0;
+    margin: 0;
     background: #6495ED;
     border-radius: 50px;
-    display: flex;
-    align-items: center;
 
-    &:last-child {
-      margin: 0 0 15px 0;
+    font-weight: 500;
+    font-size: 25px;
+    color: #fafafa;
+    letter-spacing: normal;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &::before {
+      background-size: 40px 40px;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      content:"";
+    }
+
+    &.html::before {
+      background-image: url('../img/html.svg');
+    }
+    &.css::before {
+      background-image: url('../img/css.svg');
+    }
+    &.js::before {
+      background-image: url('../img/js.svg');
+    }
+    &.react::before {
+      background-image: url('../img/react.svg');
+    }
+    &.load::before {
+      background-image: url('../img/load.svg');
+    }
+    &.php::before {
+      background-image: url('../img/php.svg');
     }
   }
 
@@ -477,14 +561,6 @@ body {
     & path {
       fill: #ffa500;
     }
-  }
-
-  &__skill-name {
-    font-weight: 500;
-    font-size: 25px;
-    margin-left: 20px;
-    margin-bottom: 0;
-    color: #fafafa;
   }
 
   &__team {
@@ -545,18 +621,29 @@ body {
   &__profession {
     margin-top: 10px;
     font-size: 22px;
-    color: #fff;
+    color: #6495ED;
     margin-bottom: 0;
+    font-weight: 550;
   }
 
   &__pearson-name {
     font-size: 25px;
-    color: #6495ED;
+    color: #fff;
     margin-bottom: 5px;
+    font-weight: 500;
   }
 }
 
 @media (max-width: 767px) {
+  .paragraf {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
   .top {
     padding-top: 100px;
 
@@ -566,12 +653,13 @@ body {
   }
 
   .view {
-    height: 95%;
+    height: 90%;
     display: flex;
     justify-content: center;
 
     &__container {
       height: 100%;
+      padding: 0;
     }
 
     &__block-pc {
@@ -587,5 +675,134 @@ body {
       width: auto;
       height: 100%;
     }
+  }
+
+  .stages {
+
+    &__block-top {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    &__stage-title {
+      width: 100%;
+    }
+
+    &__block-times {
+      margin-top: 10px;
+      padding: 5px;
+    }
+
+    &__timer-icon {
+      height: 32px;
+      margin-right: 0;
+    }
+
+    &__date {
+      font-size: 21px;
+    }
+
+    &__added-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__stage {
+      padding: 0;
+      font-size: 18px;
+    }
+
+    &__description {
+      margin: 20px 0;
+    }
+
+    &__added-elements {
+      position: static;
+      margin-bottom: 15px;
+      font-size: 27px;
+    }
+
+    &__block-added-el {
+      text-indent: 0;
+    }
+
+    &__added-element {
+      margin-bottom: 10px;
+    }
+  }
+
+  .skills-and-team {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+
+    &__skills {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    &__block-skills {
+      letter-spacing: 10px;
+      line-height: 60px;
+    }
+
+    &__skill {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 12px;
+      margin: 0;
+      background: #6495ED;
+      border-radius: 50px;
+  
+      font-weight: 500;
+      font-size: 25px;
+      color: #fafafa;
+      letter-spacing: normal;
+  
+      &:first-child {
+        margin-left: 0;
+      }
+  
+      &::before {
+        background-size: 35px 35px;
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+        content:"";
+      }
+    }
+    
+    &__team {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    &__team-title {
+      margin-bottom: 10px;
+    }
+
+    &__pearson {
+      border: 3px solid #ffa500;
+      padding: 7px;
+      margin-bottom: 7px;
+    }
+
+    &__pearson-name {
+      font-size: 21px;
+    }
+  }
+}
+
+@keyframes big-full-screen-btn {
+  0% {
+    height: 80%;
+    width: 5%;
+  }
+  100% {
+    height: 160%;
+    width: 10%;
   }
 }

@@ -62,8 +62,55 @@ body {
   height: 156%;
   transform: scale(0.5) translate(-50%, -50%);
 }
+.view__block-pc:hover .view__full-screen-pc {
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  background: rgba(100, 148, 237, 0.4039215686);
+}
+.view__block-pc:hover .view__btn-full-screen-pc {
+  transform: scale(1);
+  animation: big-full-screen-btn 0.5s ease-in 2 alternate;
+}
 .view__img-pc {
   width: 100%;
+}
+.view__full-screen-pc {
+  position: absolute;
+  top: 2.2%;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+  width: 81.8%;
+  height: 8.3%;
+  -webkit-backdrop-filter: blur(0);
+          backdrop-filter: blur(0);
+  border-top-left-radius: 1% 18%;
+  border-top-right-radius: 1% 18%;
+  background: none;
+}
+.view__macbook-camera {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 11%;
+}
+.view__btn-full-screen-pc {
+  position: absolute;
+  top: 10%;
+  left: 0.65%;
+  height: 80%;
+  width: 5%;
+  background: #ffa600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+}
+.view__img-btn-full-screen {
+  width: 65%;
+  height: 65%;
 }
 .view__block-link-mac {
   position: absolute;
@@ -304,17 +351,21 @@ body {
   font-weight: 500;
   margin-bottom: 0;
 }
+.stages__date.start {
+  margin-left: 10px;
+}
 .stages__stage-title {
   position: relative;
   border: 3px solid #6495ED;
   border-radius: 50px;
-  width: 500px;
+  width: 400px;
   height: 48px;
   overflow: hidden;
 }
 .stages__stage-title-slider {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
@@ -392,6 +443,7 @@ body {
   text-indent: 150px;
   text-align: left;
   opacity: 0;
+  letter-spacing: 10px;
 }
 .stages__block-added-el.opacity {
   opacity: 1;
@@ -406,9 +458,9 @@ body {
   background: #6495ED;
   padding: 5px 10px;
   border-radius: 25px;
-  margin: 0 10px 0 0;
   display: inline-block;
   text-indent: 0;
+  letter-spacing: normal;
 }
 
 .skills-and-team {
@@ -425,24 +477,50 @@ body {
   color: #ffa500;
   text-align: center;
 }
-.skills-and-team__skill-flex-line {
-  display: flex;
-  justify-content: space-between;
-}
-.skills-and-team__skill-flex-line:last-child .skills-and-team__skill {
-  margin-bottom: 0;
+.skills-and-team__block-skills {
+  letter-spacing: 20px;
+  line-height: 80px;
 }
 .skills-and-team__skill {
-  width: 50%;
+  display: inline-flex;
+  align-items: center;
   padding: 10px 15px;
-  margin: 0 15px 15px 0;
+  margin: 0;
   background: #6495ED;
   border-radius: 50px;
-  display: flex;
-  align-items: center;
+  font-weight: 500;
+  font-size: 25px;
+  color: #fafafa;
+  letter-spacing: normal;
 }
-.skills-and-team__skill:last-child {
-  margin: 0 0 15px 0;
+.skills-and-team__skill:first-child {
+  margin-left: 0;
+}
+.skills-and-team__skill::before {
+  background-size: 40px 40px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  content: "";
+}
+.skills-and-team__skill.html::before {
+  background-image: url("../img/html.svg");
+}
+.skills-and-team__skill.css::before {
+  background-image: url("../img/css.svg");
+}
+.skills-and-team__skill.js::before {
+  background-image: url("../img/js.svg");
+}
+.skills-and-team__skill.react::before {
+  background-image: url("../img/react.svg");
+}
+.skills-and-team__skill.load::before {
+  background-image: url("../img/load.svg");
+}
+.skills-and-team__skill.php::before {
+  background-image: url("../img/php.svg");
 }
 .skills-and-team__icon {
   width: 40px;
@@ -452,13 +530,6 @@ body {
 }
 .skills-and-team__icon path {
   fill: #ffa500;
-}
-.skills-and-team__skill-name {
-  font-weight: 500;
-  font-size: 25px;
-  margin-left: 20px;
-  margin-bottom: 0;
-  color: #fafafa;
 }
 .skills-and-team__team {
   margin-left: 50px;
@@ -507,16 +578,25 @@ body {
 .skills-and-team__profession {
   margin-top: 10px;
   font-size: 22px;
-  color: #fff;
+  color: #6495ED;
   margin-bottom: 0;
+  font-weight: 550;
 }
 .skills-and-team__pearson-name {
   font-size: 25px;
-  color: #6495ED;
+  color: #fff;
   margin-bottom: 5px;
+  font-weight: 500;
 }
 
 @media (max-width: 767px) {
+  .paragraf {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .title {
+    font-size: 30px;
+  }
   .top {
     padding-top: 100px;
   }
@@ -524,12 +604,13 @@ body {
     text-align: center;
   }
   .view {
-    height: 95%;
+    height: 90%;
     display: flex;
     justify-content: center;
   }
   .view__container {
     height: 100%;
+    padding: 0;
   }
   .view__block-pc {
     display: none;
@@ -541,5 +622,108 @@ body {
   .view__img-iphone {
     width: auto;
     height: 100%;
+  }
+  .stages__block-top {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .stages__stage-title {
+    width: 100%;
+  }
+  .stages__block-times {
+    margin-top: 10px;
+    padding: 5px;
+  }
+  .stages__timer-icon {
+    height: 32px;
+    margin-right: 0;
+  }
+  .stages__date {
+    font-size: 21px;
+  }
+  .stages__added-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .stages__stage {
+    padding: 0;
+    font-size: 18px;
+  }
+  .stages__description {
+    margin: 20px 0;
+  }
+  .stages__added-elements {
+    position: static;
+    margin-bottom: 15px;
+    font-size: 27px;
+  }
+  .stages__block-added-el {
+    text-indent: 0;
+  }
+  .stages__added-element {
+    margin-bottom: 10px;
+  }
+  .skills-and-team {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+  }
+  .skills-and-team__skills {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .skills-and-team__block-skills {
+    letter-spacing: 10px;
+    line-height: 60px;
+  }
+  .skills-and-team__skill {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 12px;
+    margin: 0;
+    background: #6495ED;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 25px;
+    color: #fafafa;
+    letter-spacing: normal;
+  }
+  .skills-and-team__skill:first-child {
+    margin-left: 0;
+  }
+  .skills-and-team__skill::before {
+    background-size: 35px 35px;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    content: "";
+  }
+  .skills-and-team__team {
+    width: 100%;
+    margin-left: 0;
+  }
+  .skills-and-team__team-title {
+    margin-bottom: 10px;
+  }
+  .skills-and-team__pearson {
+    border: 3px solid #ffa500;
+    padding: 7px;
+    margin-bottom: 7px;
+  }
+  .skills-and-team__pearson-name {
+    font-size: 21px;
+  }
+}
+@keyframes big-full-screen-btn {
+  0% {
+    height: 80%;
+    width: 5%;
+  }
+  100% {
+    height: 160%;
+    width: 10%;
   }
 }
