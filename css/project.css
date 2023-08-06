@@ -108,6 +108,9 @@ body {
   justify-content: center;
   transform: scale(0);
 }
+.view__btn-full-screen-pc:hover .view__img-btn-full-screen {
+  animation: scaleble-icon-in-island-hover 0.5s ease-in infinite alternate;
+}
 .view__img-btn-full-screen {
   width: 65%;
   height: 65%;
@@ -148,6 +151,13 @@ body {
   height: 165%;
   transform: scale(0.5) translate(-50%, -50%);
 }
+.view__block-mobile:hover .view__animated-iland {
+  animation: big-island 2s ease-in 1 alternate;
+}
+.view__block-mobile:hover .view__img-btn-full-screen-iphone {
+  transform: scale(1);
+  animation: scaleble-icon-in-island 2s ease-in 1 alternate;
+}
 .view__img-iphone {
   width: 100%;
 }
@@ -165,6 +175,53 @@ body {
 .view__img-url-iphone path {
   color: #000;
   fill: #000;
+}
+.view__animated-iland {
+  position: absolute;
+  top: 3.2%;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+  width: 29.5%;
+  height: 4.5%;
+  border-top-right-radius: 17% 50%;
+  border-top-left-radius: 17% 50%;
+  border-bottom-right-radius: 17% 50%;
+  border-bottom-left-radius: 17% 50%;
+  border: 1px solid #ffa500;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.view__animated-iland.active {
+  width: 37%;
+  height: 18%;
+  border-radius: 23%;
+  justify-content: center;
+}
+.view__animated-iland:hover {
+  width: 37%;
+  height: 18%;
+  border-radius: 23%;
+  justify-content: center;
+}
+.view__animated-iland:hover .view__img-btn-full-screen-iphone {
+  transform: scale(1);
+  margin-right: 0;
+  width: 50%;
+  height: 50%;
+  animation: scaleble-icon-in-island-hover 0.5s ease-in infinite alternate;
+}
+.view__img-btn-full-screen-iphone {
+  position: absolute;
+  height: 90%;
+  width: 28%;
+  margin-right: 5%;
+  transform: scale(0);
+}
+.view__img-btn-full-screen-iphone.active {
+  transform: scale(1);
 }
 
 .slider {
@@ -725,5 +782,100 @@ body {
   100% {
     height: 160%;
     width: 10%;
+  }
+}
+@keyframes scaleble-icon-in-island {
+  0% {
+    transform: scale(0);
+  }
+  10% {
+    transform: scale(1);
+    margin-right: 0;
+    width: 50%;
+    height: 50%;
+  }
+  30% {
+    transform: scale(1.3);
+    margin-right: 0;
+    width: 50%;
+    height: 50%;
+  }
+  50% {
+    transform: scale(1);
+    margin-right: 0;
+    width: 50%;
+    height: 50%;
+  }
+  70% {
+    transform: scale(1.3);
+    margin-right: 0;
+    width: 50%;
+    height: 50%;
+  }
+  90% {
+    transform: scale(1);
+    margin-right: 0;
+    width: 50%;
+    height: 50%;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scaleble-icon-in-island-hover {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}
+@keyframes big-island {
+  0% {
+    width: 29.1%;
+    height: 4.2%;
+    border-top-right-radius: 16% 50%;
+    border-top-left-radius: 16% 50%;
+    border-bottom-right-radius: 16% 50%;
+    border-bottom-left-radius: 16% 50%;
+    justify-content: center;
+  }
+  10% {
+    width: 37%;
+    height: 18%;
+    border-radius: 23%;
+    justify-content: center;
+  }
+  90% {
+    width: 37%;
+    height: 18%;
+    border-radius: 23%;
+    justify-content: center;
+  }
+  100% {
+    width: 29.1%;
+    height: 4.2%;
+    border-top-right-radius: 16% 50%;
+    border-top-left-radius: 16% 50%;
+    border-bottom-right-radius: 16% 50%;
+    border-bottom-left-radius: 16% 50%;
+    justify-content: center;
+  }
+}
+@keyframes big-island-hover {
+  0% {
+    width: 29.1%;
+    height: 4.2%;
+    border-top-right-radius: 16% 50%;
+    border-top-left-radius: 16% 50%;
+    border-bottom-right-radius: 16% 50%;
+    border-bottom-left-radius: 16% 50%;
+    justify-content: center;
+  }
+  100% {
+    width: 37%;
+    height: 18%;
+    border-radius: 23%;
+    justify-content: center;
   }
 }
