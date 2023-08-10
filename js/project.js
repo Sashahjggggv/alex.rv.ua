@@ -63,6 +63,14 @@ window.addEventListener('input', function (e) {
     document.querySelector(".stages__description.eleven").classList.remove('active');
   }, 150);
 
+  var macbook = document.querySelector(".view__pc-iframe");
+  var macbookIframe = macbook.contentWindow.document.getElementsByTagName("body")[0];
+  var iphone = document.querySelector(".view__iphone-iframe");
+  var iphoneIframe = iphone.contentWindow.document.getElementsByTagName("body")[0];
+  macbookIframe.className = "";
+  iphoneIframe.className = "";
+  macbookIframe.classList.add('ready' + value)
+  iphoneIframe.classList.add('ready' + value)
   if (value == 0) {
     dateSlider.classList.add('first');
     stageSlider.classList.add('first');
@@ -214,23 +222,9 @@ $(window).on('load', function () {
   setTimeout(whenPageIsLoaded, 100);
 }) 
 
-// $.ajax({
-//   type: 'POST',
-//   url: "https://greathouse.rv.ua/",
-//   data: {},
-//   beforeSend: function(XMLHttpRequest) {
-//     //Download progress
-//     window.addEventListener ("DOMContentLoaded", (event) => {
-//       XMLHttpRequest[0].addEventListener("progress", function(evt){
-//         if (evt.lengthComputable) {  
-//           var percentComplete = evt.loaded / evt.total;
-//           console.log(percentComplete)
-//           //Do something with download progress
-//         }
-//       }, false); 
-//     })
-//   },
-//   success: function(data){
-//     console.log(data)
-//   }
-// });
+$('.view__btn-full-screen-pc,.view__bg-shadow').click(function(){
+  $('.view__block-pc,.view__btn-full-screen-pc,.view__container,.view__bg-shadow').toggleClass('active');
+})
+$('.view__animated-iland,.view__bg-shadow1').click(function(){
+  $('.view__block-mobile,.view__img-iphone,.view__bg-shadow1').toggleClass('active');
+})

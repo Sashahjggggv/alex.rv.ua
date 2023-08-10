@@ -42,13 +42,52 @@ body {
     transform: scale(0.5) translate(-50%, -50%);
   } */
 }
-.view__container {
-  display: flex;
-  justify-content: space-between;
+.view__bg-shadow, .view__bg-shadow1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  display: none;
+}
+.view__bg-shadow.active, .view__bg-shadow1.active {
+  display: block;
 }
 .view__container {
   display: flex;
   justify-content: space-between;
+}
+.view__exit-full-screen {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 12;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid red;
+  background: #fff;
+}
+.view__exit-full-screen.active {
+  display: flex;
+}
+.view__exit-full-screen-img {
+  width: 60%;
+  height: 60%;
+  animation: scaleble-icon-in-island-hover 0.5s ease-out infinite alternate;
+}
+.view__container {
+  display: flex;
+  justify-content: space-between;
+}
+.view__container.active {
+  justify-content: end;
 }
 .view__block-pc {
   position: relative;
@@ -62,14 +101,30 @@ body {
   height: 156%;
   transform: scale(0.5) translate(-50%, -50%);
 }
+.view__block-pc > iframe.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  z-index: 11;
+}
 .view__block-pc:hover .view__full-screen-pc {
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
-  background: rgba(100, 148, 237, 0.4039215686);
+  /* backdrop-filter: blur(2px); */
+  /* background: #6494ed67; */
 }
 .view__block-pc:hover .view__btn-full-screen-pc {
   transform: scale(1);
   animation: big-full-screen-btn 0.5s ease-in 2 alternate;
+}
+.view__block-pc.active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 11;
+  transform: translate(-50%, -50%);
+  width: 75%;
 }
 .view__img-pc {
   width: 100%;
@@ -108,12 +163,29 @@ body {
   justify-content: center;
   transform: scale(0);
 }
-.view__btn-full-screen-pc:hover .view__img-btn-full-screen {
+.view__btn-full-screen-pc:hover {
+  transform: scale(1.1) !important;
+}
+.view__btn-full-screen-pc .view__img-btn-full-screen, .view__btn-full-screen-pc.view__exit-full-screen-img {
   animation: scaleble-icon-in-island-hover 0.5s ease-in infinite alternate;
+}
+.view__btn-full-screen-pc.active {
+  background: #f00;
+}
+.view__btn-full-screen-pc.active svg.view__img-btn-full-screen {
+  display: none;
+}
+.view__btn-full-screen-pc.active svg.view__exit-full-screen-img {
+  display: block;
 }
 .view__img-btn-full-screen {
   width: 65%;
   height: 65%;
+}
+.view__exit-full-screen-img {
+  width: 65%;
+  height: 65%;
+  display: none;
 }
 .view__block-link-mac {
   position: absolute;
@@ -151,15 +223,34 @@ body {
   height: 165%;
   transform: scale(0.5) translate(-50%, -50%);
 }
-.view__block-mobile:hover .view__animated-iland {
+.view__block-mobile:hover .view__animated-iland, .view__block-mobile *:hover .view__animated-iland {
   animation: big-island 2s ease-in 1 alternate;
 }
-.view__block-mobile:hover .view__img-btn-full-screen-iphone {
+.view__block-mobile:hover .view__img-btn-full-screen-iphone, .view__block-mobile:hover .view__exit-full-screen-img-iphone, .view__block-mobile *:hover .view__img-btn-full-screen-iphone, .view__block-mobile *:hover .view__exit-full-screen-img-iphone {
   transform: scale(1);
   animation: scaleble-icon-in-island 2s ease-in 1 alternate;
 }
+.view__block-mobile.active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  z-index: 11;
+  height: 90%;
+}
+.view__block-mobile.active .view__img-btn-full-screen-iphone {
+  display: none !important;
+}
+.view__block-mobile.active .view__exit-full-screen-img-iphone {
+  display: block !important;
+}
 .view__img-iphone {
   width: 100%;
+}
+.view__img-iphone.active {
+  width: auto;
+  height: 100%;
 }
 .view__block-link-iphone {
   position: absolute;
@@ -177,6 +268,7 @@ body {
   fill: #000;
 }
 .view__animated-iland {
+  cursor: pointer;
   position: absolute;
   top: 3.2%;
   left: 50%;
@@ -206,7 +298,7 @@ body {
   border-radius: 23%;
   justify-content: center;
 }
-.view__animated-iland:hover .view__img-btn-full-screen-iphone {
+.view__animated-iland:hover .view__img-btn-full-screen-iphone, .view__animated-iland:hover .view__exit-full-screen-img-iphone {
   transform: scale(1);
   margin-right: 0;
   width: 50%;
@@ -221,6 +313,17 @@ body {
   transform: scale(0);
 }
 .view__img-btn-full-screen-iphone.active {
+  transform: scale(1);
+}
+.view__exit-full-screen-img-iphone {
+  position: absolute;
+  height: 90%;
+  width: 28%;
+  margin-right: 5%;
+  transform: scale(0);
+  display: none;
+}
+.view__exit-full-screen-img-iphone.active {
   transform: scale(1);
 }
 
@@ -415,7 +518,7 @@ body {
   position: relative;
   border: 3px solid #6495ED;
   border-radius: 50px;
-  width: 400px;
+  width: 500px;
   height: 48px;
   overflow: hidden;
 }
@@ -680,6 +783,9 @@ body {
     width: auto;
     height: 100%;
   }
+  .view__animated-iland {
+    display: none;
+  }
   .stages__block-top {
     display: flex;
     flex-direction: column-reverse;
@@ -879,3 +985,37 @@ body {
     justify-content: center;
   }
 }
+/* @keyframes mob-island-hov {
+  0% {
+    width: 37%;
+    height: 18%;
+    border-radius: 23%;
+    justify-content: center;
+
+    & .view__img-btn-full-screen-iphone, & .view__exit-full-screen-img-iphone {
+      transform: scale(1);
+      margin-right: 0;
+      width: 50%;
+      height: 50%;
+      animation: scaleble-icon-in-island-hover 0.5s ease-in 2 alternate;
+    }
+  }
+
+  100% {
+    width: 29.5%;
+    height: 4.5%;
+    border-top-right-radius: 17% 50%;
+    border-top-left-radius: 17% 50%;
+    border-bottom-right-radius: 17% 50%;
+    border-bottom-left-radius: 17% 50%;
+    justify-content: end;
+
+    & .view__img-btn-full-screen-iphone, & .view__exit-full-screen-img-iphone {
+      height: 90%;
+      width: 28%;
+      margin-right: 5%;
+      transform: scale(0);
+      animation: none;
+    }
+  }
+} */
