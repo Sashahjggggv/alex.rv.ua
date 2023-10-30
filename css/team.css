@@ -346,11 +346,11 @@
 }
 
 .alex-map .projects__bg {
-  background: url("../img/alex-map.png") top left/cover no-repeat;
+  background: url("../img/projects/alex-map.png") top left/cover no-repeat;
 }
 
 .greathouse .projects__bg {
-  background: url("../img/greathouse.png") top left/cover no-repeat;
+  background: url("../img/projects/greathouse.png") top left/cover no-repeat;
 }
 
 .circles-choose__img {
