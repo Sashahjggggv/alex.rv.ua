@@ -7,7 +7,6 @@ body {
 }
 
 .top {
-  height: 70%;
   padding-top: 130px;
 
   &__container {
@@ -15,12 +14,12 @@ body {
 
   &__title {
     color: #ffa500;
-    font-size: 45px;
+    font-size: 43px;
   }
 
   &__paragraf {
+    font-size: 22px;
     color: #fff;
-    padding-right: 20%;
   }
 }
 
@@ -41,35 +40,42 @@ body {
   }
 
   &__project {
+    border: 5px dotted #ffa50000;
     width: calc(50% - 15px);
     border-radius: 30px;
     overflow: hidden;
     position: relative;
-
+    box-sizing: border-box;
+    
     &:hover {
+      border: 5px dotted #ffa500;
+
       & .projects__blur {
-        backdrop-filter: blur(5px);
-        background: #00000029;
-        color: #ffa500;
-        text-shadow: 1px 1px 5px #fff;
+        text-decoration: underline;
       }
     }
   }
 
   &__blur {
     position: absolute;
-    top: 0;left: 0;z-index: 1;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(0);
-    padding: 0 15%;
-    color: #ffa50000;
+    bottom: 5%;
+    left: 50%;
+    z-index: 1;
+    width: 95%;
+    height: auto;
+    padding: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    transform: translateX(-50%);
+    font-size: 23px;
     font-weight: 600;
+    color: #ffa500;
     text-align: center;
+    border-radius: 30px;
+    border: 1.5px solid #ffa500;
+    backdrop-filter: blur(7px);
+    background: rgba(0, 0, 0, 0.45);
   }
 
   &__project-image {
@@ -97,7 +103,19 @@ body {
     }
 
     &__blur {
-      padding: 0 10%;
+      padding: 7px;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 95%;
+      height: auto;
+      border-radius: 30px;
+      border: 1px solid #ffa500;
+      backdrop-filter: blur(7px);
+      font-size: 18px;
+      background: rgba(0, 0, 0, 0.37);
+      color: #ffa500;
+      text-shadow: none;
     }
   }
 }
