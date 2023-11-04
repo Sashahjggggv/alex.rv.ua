@@ -12,11 +12,11 @@ $('.header__contacts-hide,.header__burger-hide,.blur').click(function(event){
 
 // функція ховання, показу хедера при скролі
 var st = $(window).scrollTop();
-var navheight = $('.header').height() + 15;
+var navheight = $('.header').height() + 30;
 $(window).scroll(function() {
 	var nst = $(window).scrollTop();
 	var subio = nst < st;
-	var bajo = nst - 10 > st;
+	var bajo = nst - 40 > st;
 	
 	if (subio) {
 		$('.header').addClass('sticky');
