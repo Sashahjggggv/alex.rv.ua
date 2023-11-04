@@ -16,9 +16,12 @@ var navheight = $('.header').height() + 30;
 $(window).scroll(function() {
 	var nst = $(window).scrollTop();
 	var subio = nst < st;
-	var bajo = nst - 70 > st;
+	var bajo = nst - 40 > st;
 	
 	if (subio) {
+		$('.header').addClass('sticky');
+		st = nst;
+	} if (st == 0 || st < 0) {
 		$('.header').addClass('sticky');
 		st = nst;
 	} else if(bajo) {
