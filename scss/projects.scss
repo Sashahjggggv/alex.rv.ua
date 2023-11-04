@@ -41,19 +41,32 @@ body {
   }
 
   &__project {
-    border: 5px dotted #ffa50000;
+    position: relative;
     width: calc(50% - 15px);
     border-radius: 30px;
-    overflow: hidden;
-    position: relative;
     box-sizing: border-box;
     
-    &:hover {
-      border: 5px dotted #ffa500;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      animation: clippath 5s infinite linear;
+      transition: all .3s ease;
+      border-radius: 35px;
+    }
 
-      & .projects__blur {
-        text-decoration: underline;
-      }
+    &::after {
+      animation: clippath 5s infinite -2.5s linear;
+    }
+    
+    &:hover {
+      
+      & .projects__blur {text-decoration: underline;}
+      &::before, &::after {border: 2px solid #ffa500;}
     }
   }
 
@@ -80,6 +93,7 @@ body {
   }
 
   &__project-image {
+    border-radius: 30px;
     width: 100%;
   }
 }
@@ -118,5 +132,22 @@ body {
       color: #ffa500;
       text-shadow: none;
     }
+  }
+}
+
+@keyframes clippath {
+  0%,
+  100% {
+      clip-path: inset(0 0 95% 0);
+  }
+  
+  25% {
+      clip-path: inset(0 95% 0 0);
+  }
+  50% {
+      clip-path: inset(95% 0 0 0);
+  }
+  75% {
+      clip-path: inset(0 0 0 95%);
   }
 }

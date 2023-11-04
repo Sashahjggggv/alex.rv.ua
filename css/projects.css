@@ -32,18 +32,30 @@ body {
   margin-bottom: 0;
 }
 .projects__project {
-  border: 5px dotted rgba(255, 165, 0, 0);
+  position: relative;
   width: calc(50% - 15px);
   border-radius: 30px;
-  overflow: hidden;
-  position: relative;
   box-sizing: border-box;
 }
-.projects__project:hover {
-  border: 5px dotted #ffa500;
+.projects__project::before, .projects__project::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  animation: clippath 5s infinite linear;
+  transition: all 0.3s ease;
+  border-radius: 35px;
+}
+.projects__project::after {
+  animation: clippath 5s infinite -2.5s linear;
 }
 .projects__project:hover .projects__blur {
   text-decoration: underline;
+}
+.projects__project:hover::before, .projects__project:hover::after {
+  border: 2px solid #ffa500;
 }
 .projects__blur {
   position: absolute;
@@ -68,6 +80,7 @@ body {
   background: rgba(0, 0, 0, 0.45);
 }
 .projects__project-image {
+  border-radius: 30px;
   width: 100%;
 }
 
@@ -101,5 +114,23 @@ body {
     background: rgba(0, 0, 0, 0.37);
     color: #ffa500;
     text-shadow: none;
+  }
+}
+@keyframes clippath {
+  0%, 100% {
+    -webkit-clip-path: inset(0 0 95% 0);
+            clip-path: inset(0 0 95% 0);
+  }
+  25% {
+    -webkit-clip-path: inset(0 95% 0 0);
+            clip-path: inset(0 95% 0 0);
+  }
+  50% {
+    -webkit-clip-path: inset(95% 0 0 0);
+            clip-path: inset(95% 0 0 0);
+  }
+  75% {
+    -webkit-clip-path: inset(0 0 0 95%);
+            clip-path: inset(0 0 0 95%);
   }
 }
