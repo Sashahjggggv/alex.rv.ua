@@ -54,19 +54,26 @@ body {
       left: -5px;
       right: -5px;
       bottom: -5px;
-      animation: clippath 5s infinite linear;
       transition: all .3s ease;
       border-radius: 35px;
+      border: 2px solid #ffa500;
+      clip-path: inset(51% 0 0 51%);
     }
-
     &::after {
-      animation: clippath 5s infinite -2.5s linear;
+      clip-path: inset(0 51% 51% 0);
     }
     
     &:hover {
-      
-      & .projects__blur {text-decoration: underline;}
-      &::before, &::after {border: 2px solid #ffa500;}
+
+      &::before {
+        animation: clippath 5s infinite linear;
+      }
+      &::after {
+        animation: clippath 5s infinite -2.5s linear;
+      }
+      & .projects__blur {
+        text-decoration: underline;
+      }
     }
   }
 

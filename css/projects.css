@@ -44,18 +44,24 @@ body {
   left: -5px;
   right: -5px;
   bottom: -5px;
-  animation: clippath 5s infinite linear;
   transition: all 0.3s ease;
   border-radius: 35px;
+  border: 2px solid #ffa500;
+  -webkit-clip-path: inset(51% 0 0 51%);
+          clip-path: inset(51% 0 0 51%);
 }
 .projects__project::after {
+  -webkit-clip-path: inset(0 51% 51% 0);
+          clip-path: inset(0 51% 51% 0);
+}
+.projects__project:hover::before {
+  animation: clippath 5s infinite linear;
+}
+.projects__project:hover::after {
   animation: clippath 5s infinite -2.5s linear;
 }
 .projects__project:hover .projects__blur {
   text-decoration: underline;
-}
-.projects__project:hover::before, .projects__project:hover::after {
-  border: 2px solid #ffa500;
 }
 .projects__blur {
   position: absolute;
