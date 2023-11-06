@@ -11,7 +11,6 @@ window.addEventListener('input', function (e) {
   slideValue.style.left = (value) + "%";
   inputBg.style.width = (value) + "%";
 
-
   dateSlider.classList.remove('first', 'second', 'third', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten');
   stageSlider.classList.remove('first', 'second', 'third', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten');
   
@@ -220,7 +219,7 @@ $(window).on('load', function () {
     loadIframe()
   }
   setTimeout(whenPageIsLoaded, 100);
-}) 
+})
 
 $('.view__btn-full-screen-pc,.view__bg-shadow').click(function(){
   $('.view__block-pc,.view__btn-full-screen-pc,.view__container,.view__bg-shadow').toggleClass('active');
