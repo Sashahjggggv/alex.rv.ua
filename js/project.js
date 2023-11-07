@@ -76,6 +76,7 @@ window.addEventListener('input', function (e) {
     setTimeout(() => {
       document.querySelector(".stages__block-added-el.first").classList.add('active');
       document.querySelector(".stages__description.first").classList.add('active');
+      
     }, 151);
     setTimeout(() => {
       document.querySelector(".stages__block-added-el.first").classList.add('opacity');
