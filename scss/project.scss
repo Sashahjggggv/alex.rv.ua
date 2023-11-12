@@ -230,6 +230,39 @@ body {
     }
   }
 
+  &__loading-anim {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: black;
+    position: absolute;
+    top: 10.5%;
+    left: 9.2%;
+    width: 163.2%;
+    height: 156%;
+    transform: scale(0.5) translate(-50%, -50%);
+  }
+  &__loading-anim-img {
+    height: 500px;
+    max-height: 70%;
+    max-width: 50%;
+  }
+
+  &__iframe-website {
+    z-index: -1;
+    &.onscrean {
+      z-index: 1;
+    }
+  }
+
+  &__iframe-briefing {
+    z-index: -1;
+
+    &.onscrean {
+      z-index: 1;
+    }
+  }
+
   /* &__pc-iframe {
     position: absolute;
     top: 10.5%;
@@ -374,6 +407,19 @@ body {
     &.active {
       transform: scale(1);
     }
+  }
+
+  &__loading-anim-phone {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: black;
+    position: absolute;
+    top: 8.7%;
+    left: 4.6%;
+    width: 183%;
+    height: 165%;
+    transform: scale(0.5) translate(-50%, -50%);
   }
 
   /* &__iphone-iframe {

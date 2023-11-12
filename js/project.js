@@ -62,26 +62,30 @@ window.addEventListener('input', function (e) {
     document.querySelector(".stages__description.eleven").classList.remove('active');
   }, 150);
 
-  var macbook = document.querySelector(".view__pc-iframe");
-  var macbookIframe = macbook.contentWindow.document.getElementsByTagName("body")[0];
-  var iphone = document.querySelector(".view__iphone-iframe");
-  var iphoneIframe = iphone.contentWindow.document.getElementsByTagName("body")[0];
-  macbookIframe.className = "";
-  iphoneIframe.className = "";
-  macbookIframe.classList.add('ready' + value)
-  iphoneIframe.classList.add('ready' + value)
+  // var macbook = document.querySelector(".view__pc-iframe");
+  // var macbookIframe = macbook.contentWindow.document.getElementsByTagName("body")[0];
+  // var iphone = document.querySelector(".view__iphone-iframe");
+  // var iphoneIframe = iphone.contentWindow.document.getElementsByTagName("body")[0];
+  // macbookIframe.className = "";
+  // iphoneIframe.className = "";
+  // macbookIframe.classList.add('ready' + value)
+  // iphoneIframe.classList.add('ready' + value)
   if (value == 0) {
     dateSlider.classList.add('first');
     stageSlider.classList.add('first');
     setTimeout(() => {
       document.querySelector(".stages__block-added-el.first").classList.add('active');
       document.querySelector(".stages__description.first").classList.add('active');
-      
+
     }, 151);
     setTimeout(() => {
       document.querySelector(".stages__block-added-el.first").classList.add('opacity');
       document.querySelector(".stages__description.first").classList.add('opacity');
     }, 300);
+
+    // action on screan
+      document.querySelector(".view__iframe-website.pc,.view__iframe-website.phone").classList.remove('onscrean');
+      document.querySelector(".view__iframe-briefing.pc,.view__iframe-briefing.phone").classList.add('onscrean');
   } if (value == 10) {
     dateSlider.classList.add('second');
     stageSlider.classList.add('second');
@@ -93,6 +97,9 @@ window.addEventListener('input', function (e) {
       document.querySelector(".stages__block-added-el.second").classList.add('opacity');
       document.querySelector(".stages__description.second").classList.add('opacity');
     }, 300);
+    // action on screan
+      document.querySelector(".view__iframe-website.pc,.view__iframe-website.phone").classList.remove('onscrean');
+      document.querySelector(".view__iframe-briefing.pc,.view__iframe-briefing.phone").classList.remove('onscrean');
   } if (value == 20) {
     dateSlider.classList.add('third');
     stageSlider.classList.add('third');
@@ -104,6 +111,9 @@ window.addEventListener('input', function (e) {
       document.querySelector(".stages__block-added-el.third").classList.add('opacity');
       document.querySelector(".stages__description.third").classList.add('opacity');
     }, 300);
+    // action on screan
+      document.querySelector(".view__iframe-website.pc,.view__iframe-website.phone").classList.add('onscrean');
+      document.querySelector(".view__iframe-briefing.pc,.view__iframe-briefing.phone").classList.remove('onscrean');
   } if (value == 30) {
     dateSlider.classList.add('four');
     stageSlider.classList.add('four');
@@ -115,6 +125,9 @@ window.addEventListener('input', function (e) {
       document.querySelector(".stages__block-added-el.four").classList.add('opacity');
       document.querySelector(".stages__description.four").classList.add('opacity');
     }, 300);
+    // action on screan
+      document.querySelector(".view__iframe-website.pc,.view__iframe-website.phone").classList.add('onscrean');
+      document.querySelector(".view__iframe-briefing.pc,.view__iframe-briefing.phone").classList.remove('onscrean');
   } if (value == 40) {
     dateSlider.classList.add('five');
     stageSlider.classList.add('five');
@@ -126,6 +139,9 @@ window.addEventListener('input', function (e) {
       document.querySelector(".stages__block-added-el.five").classList.add('opacity');
       document.querySelector(".stages__description.five").classList.add('opacity');
     }, 300);
+    // action on screan
+      document.querySelector(".view__iframe-website.pc,.view__iframe-website.phone").classList.add('onscrean');
+      document.querySelector(".view__iframe-briefing.pc,.view__iframe-briefing.phone").classList.remove('onscrean');
   } if (value == 50) {
     dateSlider.classList.add('six');
     stageSlider.classList.add('six');
@@ -139,6 +155,9 @@ window.addEventListener('input', function (e) {
       document.querySelector(".stages__block-added-el.six").classList.add('opacity');
       document.querySelector(".stages__description.six").classList.add('opacity');
     }, 300);
+    // action on screan
+      document.querySelector(".view__iframe-website.pc,.view__iframe-website.phone").classList.add('onscrean');
+      document.querySelector(".view__iframe-briefing.pc,.view__iframe-briefing.phone").classList.remove('onscrean');
   } if (value == 60) {
     dateSlider.classList.add('seven');
     stageSlider.classList.add('seven');
@@ -150,6 +169,9 @@ window.addEventListener('input', function (e) {
       document.querySelector(".stages__block-added-el.seven").classList.add('opacity');
       document.querySelector(".stages__description.seven").classList.add('opacity');
     }, 300);
+    // action on screan
+      document.querySelector(".view__iframe-website.pc,.view__iframe-website.phone").classList.add('onscrean');
+      document.querySelector(".view__iframe-briefing.pc,.view__iframe-briefing.phone").classList.remove('onscrean');
   } if (value == 70) {
     dateSlider.classList.add('eight');
     stageSlider.classList.add('eight');
@@ -161,6 +183,9 @@ window.addEventListener('input', function (e) {
       document.querySelector(".stages__block-added-el.eight").classList.add('opacity');
       document.querySelector(".stages__description.eight").classList.add('opacity');
     }, 300);
+    // action on screan
+      document.querySelector(".view__iframe-website.pc,.view__iframe-website.phone").classList.add('onscrean');
+      document.querySelector(".view__iframe-briefing.pc,.view__iframe-briefing.phone").classList.remove('onscrean');
   } if (value == 80) {
     dateSlider.classList.add('nine');
     stageSlider.classList.add('nine');
@@ -172,6 +197,9 @@ window.addEventListener('input', function (e) {
       document.querySelector(".stages__block-added-el.nine").classList.add('opacity');
       document.querySelector(".stages__description.nine").classList.add('opacity');
     }, 300);
+    // action on screan
+      document.querySelector(".view__iframe-website.pc,.view__iframe-website.phone").classList.add('onscrean');
+      document.querySelector(".view__iframe-briefing.pc,.view__iframe-briefing.phone").classList.remove('onscrean');
   } if (value == 90) {
     dateSlider.classList.add('ten');
     stageSlider.classList.add('ten');
@@ -183,6 +211,9 @@ window.addEventListener('input', function (e) {
       document.querySelector(".stages__block-added-el.ten").classList.add('opacity');
       document.querySelector(".stages__description.ten").classList.add('opacity');
     }, 300);
+    // action on screan
+      document.querySelector(".view__iframe-website.pc,.view__iframe-website.phone").classList.add('onscrean');
+      document.querySelector(".view__iframe-briefing.pc,.view__iframe-briefing.phone").classList.remove('onscrean');
   } if (value == 100) {
     setTimeout(() => {
       document.querySelector(".stages__block-added-el.eleven").classList.add('active');
@@ -192,6 +223,9 @@ window.addEventListener('input', function (e) {
       document.querySelector(".stages__block-added-el.eleven").classList.add('opacity');
       document.querySelector(".stages__description.eleven").classList.add('opacity');
     }, 300);
+    // action on screan
+      document.querySelector(".view__iframe-website.pc,.view__iframe-website.phone").classList.add('onscrean');
+      document.querySelector(".view__iframe-briefing.pc,.view__iframe-briefing.phone").classList.remove('onscrean');
   }
 }, false);
 
@@ -203,21 +237,27 @@ loadIframe = function() {
   if (iframeUrlPc) {
     iframePc.insertAdjacentHTML(
       "beforeend",
-      '<iframe class="view__pc-iframe" src="' + iframeUrlPc + '"></iframe>'
+      '<iframe class="view__pc-iframe view__iframe-website pc onscrean" src="' + iframeUrlPc + '"></iframe>'
     )
   }
 
   if (iframeUrlPhone) {
     iframePhone.insertAdjacentHTML(
       "beforeend",
-      '<iframe class="view__iphone-iframe" src="' + iframeUrlPhone + '"></iframe>'
+      '<iframe class="view__iphone-iframe view__iframe-website phone onscrean" src="' + iframeUrlPhone + '"></iframe>'
     )
   }
+}
+
+
+let loadFigmaIframe = function() {
+
 }
 
 $(window).on('load', function () {
   whenPageIsLoaded = function() {
     loadIframe()
+    loadFigmaIframe()
   }
   setTimeout(whenPageIsLoaded, 100);
 })

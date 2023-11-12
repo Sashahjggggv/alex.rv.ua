@@ -1,0 +1,70 @@
+body {
+  background: #fff;
+}
+.wrapper {
+  padding: 0 50px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    width: 170px;
+    max-width: 20%;
+  }
+
+  &__title {
+    max-width: 80%;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+  }
+}
+.content {
+
+  &__section {}
+
+  &__title {
+    text-indent: 30px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  &__paragraf {
+    text-indent: 30px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  &__subparagraf {
+    text-indent: 30px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+
+.no-space {
+  white-space: nowrap;
+}
+
+@media (max-width:1000px) {
+  .header {
+    margin-top: 30px;
+    flex-direction: column;
+  
+    &__logo {
+      width: 130px;
+      max-width: 100%;
+    }
+  
+    &__title {
+      max-width: 100%;
+      font-size: 27px;
+      padding: 10px;
+    }
+  }
+  .wrapper {
+    padding: 0 10px;
+  }
+}
