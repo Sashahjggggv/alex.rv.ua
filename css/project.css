@@ -133,7 +133,7 @@ body {
   position: absolute;
   top: 2.2%;
   left: 50%;
-  z-index: 1;
+  z-index: 2;
   transform: translateX(-50%);
   width: 81.8%;
   height: 8.3%;
@@ -240,6 +240,12 @@ body {
 .view__iframe-briefing.onscrean {
   z-index: 1;
 }
+.view__iframe-figma {
+  z-index: -1;
+}
+.view__iframe-figma.onscrean {
+  z-index: 1;
+}
 .view__block-mobile {
   position: relative;
   width: 22.2%;
@@ -301,7 +307,7 @@ body {
   position: absolute;
   top: 3.2%;
   left: 50%;
-  z-index: 1;
+  z-index: 2;
   transform: translateX(-50%);
   width: 29.5%;
   height: 4.5%;

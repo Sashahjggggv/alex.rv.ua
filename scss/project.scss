@@ -140,7 +140,7 @@ body {
     position: absolute;
     top: 2.2%;
     left: 50%;
-    z-index: 1;
+    z-index: 2;
     transform: translateX(-50%);
     width: 81.8%;
     height: 8.3%;
@@ -263,6 +263,14 @@ body {
     }
   }
 
+  &__iframe-figma {
+    z-index: -1;
+
+    &.onscrean {
+      z-index: 1;
+    }
+  }
+
   /* &__pc-iframe {
     position: absolute;
     top: 10.5%;
@@ -347,7 +355,7 @@ body {
     position: absolute;
     top: 3.2%;
     left: 50%;
-    z-index: 1;
+    z-index: 2;
     transform: translateX(-50%);
     width: 29.5%;
     height: 4.5%;
