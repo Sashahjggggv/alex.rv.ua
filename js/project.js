@@ -63,15 +63,8 @@ window.addEventListener('input', function (e) {
   }, 150);
   
   var iframeWebsite = document.querySelector(".view__iframe-website");
-  iframeWebsite.contentWindow.postMessage('stage='+value, 'https://evil-lev.tech')
-  // var macbook = document.querySelector(".view__pc-iframe");
-  // var macbookIframe = macbook.contentWindow.document.getElementsByTagName("body")[0];
-  // var iphone = document.querySelector(".view__iphone-iframe");
-  // var iphoneIframe = iphone.contentWindow.document.getElementsByTagName("body")[0];
-  // macbookIframe.className = "";
-  // iphoneIframe.className = "";
-  // macbookIframe.classList.add('ready' + value)
-  // iphoneIframe.classList.add('ready' + value)
+  iframeWebsite.contentWindow.postMessage(value, 'https://evil-lev.tech')
+  
   if (value == 0) {
     dateSlider.classList.add('first');
     stageSlider.classList.add('first');
