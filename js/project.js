@@ -62,14 +62,14 @@ window.addEventListener('input', function (e) {
     document.querySelector(".stages__description.eleven").classList.remove('active');
   }, 150);
 
-  // var macbook = document.querySelector(".view__pc-iframe");
-  // var macbookIframe = macbook.contentWindow.document.getElementsByTagName("body")[0];
-  // var iphone = document.querySelector(".view__iphone-iframe");
-  // var iphoneIframe = iphone.contentWindow.document.getElementsByTagName("body")[0];
-  // macbookIframe.className = "";
-  // iphoneIframe.className = "";
-  // macbookIframe.classList.add('ready' + value)
-  // iphoneIframe.classList.add('ready' + value)
+  var macbook = document.querySelector(".view__pc-iframe");
+  var macbookIframe = macbook.contentWindow.document.getElementsByTagName("body")[0];
+  var iphone = document.querySelector(".view__iphone-iframe");
+  var iphoneIframe = iphone.contentWindow.document.getElementsByTagName("body")[0];
+  macbookIframe.className = "";
+  iphoneIframe.className = "";
+  macbookIframe.classList.add('ready' + value)
+  iphoneIframe.classList.add('ready' + value)
   if (value == 0) {
     dateSlider.classList.add('first');
     stageSlider.classList.add('first');
