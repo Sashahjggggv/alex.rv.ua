@@ -157,6 +157,14 @@ window.addEventListener('input', function (e) {
       document.querySelector(".view__iframe-website.phone").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.phone").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.phone").classList.remove('onscrean');
+
+      // when value is not needed
+      inputSlider.value = 50;
+      var event = new MouseEvent("input", {
+        bubbles: true,
+        cancelable: true,
+      });
+      inputSlider.dispatchEvent(event);
   } if (value == 50) {
     dateSlider.classList.add('six');
     stageSlider.classList.add('six');
