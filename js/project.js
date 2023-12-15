@@ -5,6 +5,19 @@ const dateSlider = document.querySelector(".stages__date-block-slider")
 const stageSlider = document.querySelector(".stages__stage-title-slider")
 const stageAddedEl = document.querySelector(".stages__block-added-el")
 const stageDesc = document.querySelector(".stages__description")
+let stagesToNum = stages.map(Number)
+
+slideValue.textContent = todayStage;
+slideValue.style.left = (todayStage) + "%";
+inputBg.style.width = (todayStage) + "%";
+
+      inputSlider.value = todayStage;
+      var event = new MouseEvent("input", {
+        bubbles: true,
+        cancelable: true,
+      });
+      inputSlider.dispatchEvent(event);
+
 window.addEventListener('input', function (e) {
   let value = inputSlider.value;
   slideValue.textContent = value;
@@ -66,215 +79,318 @@ window.addEventListener('input', function (e) {
   iframeWebsite.contentWindow.postMessage(value, 'https://evil-lev.tech')
   
   if (value == 0) {
-    dateSlider.classList.add('first');
-    stageSlider.classList.add('first');
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.first").classList.add('active');
-      document.querySelector(".stages__description.first").classList.add('active');
-
-    }, 151);
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.first").classList.add('opacity');
-      document.querySelector(".stages__description.first").classList.add('opacity');
-    }, 300);
-
-    // action on screan
-      document.querySelector(".view__iframe-website.pc").classList.remove('onscrean');
-      document.querySelector(".view__iframe-briefing.pc").classList.add('onscrean');
-      document.querySelector(".view__iframe-figma.pc").classList.remove('onscrean');
-      document.querySelector(".view__iframe-website.phone").classList.remove('onscrean');
-      document.querySelector(".view__iframe-briefing.phone").classList.add('onscrean');
-      document.querySelector(".view__iframe-figma.phone").classList.remove('onscrean');
+    if (stages.includes(value)) {
+      dateSlider.classList.add('first');
+      stageSlider.classList.add('first');
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.first").classList.add('active');
+        document.querySelector(".stages__description.first").classList.add('active');
+      }, 151);
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.first").classList.add('opacity');
+        document.querySelector(".stages__description.first").classList.add('opacity');
+      }, 300);
+      // action on screan
+        document.querySelector(".view__iframe-website.pc").classList.remove('onscrean');
+        document.querySelector(".view__iframe-briefing.pc").classList.add('onscrean');
+        document.querySelector(".view__iframe-figma.pc").classList.remove('onscrean');
+        document.querySelector(".view__iframe-website.phone").classList.remove('onscrean');
+        document.querySelector(".view__iframe-briefing.phone").classList.add('onscrean');
+        document.querySelector(".view__iframe-figma.phone").classList.remove('onscrean');
+    } else {
+      // chenge value to next when this value is NOT using
+      inputSlider.value = 10;
+      var event = new MouseEvent("input", {
+        bubbles: true,
+        cancelable: true,
+      });
+      inputSlider.dispatchEvent(event);
+    }
   } if (value == 10) {
-    dateSlider.classList.add('second');
-    stageSlider.classList.add('second');
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.second").classList.add('active');
-      document.querySelector(".stages__description.second").classList.add('active');
-    }, 151);
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.second").classList.add('opacity');
-      document.querySelector(".stages__description.second").classList.add('opacity');
-    }, 300);
-    // action on screan
+    if (stages.includes(value)) {
+      dateSlider.classList.add('second');
+      stageSlider.classList.add('second');
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.second").classList.add('active');
+        document.querySelector(".stages__description.second").classList.add('active');
+      }, 151);
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.second").classList.add('opacity');
+        document.querySelector(".stages__description.second").classList.add('opacity');
+      }, 300);
+      // action on screan
       document.querySelector(".view__iframe-website.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-briefing.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.pc").classList.add('onscrean');
       document.querySelector(".view__iframe-website.phone").classList.remove('onscrean');
       document.querySelector(".view__iframe-briefing.phone").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.phone").classList.add('onscrean');
+    } else {
+      // chenge value to next when this value is NOT using
+      inputSlider.value = 20;
+      var event = new MouseEvent("input", {
+        bubbles: true,
+        cancelable: true,
+      });
+      inputSlider.dispatchEvent(event);
+    }
   } if (value == 20) {
-    dateSlider.classList.add('third');
-    stageSlider.classList.add('third');
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.third").classList.add('active');
-      document.querySelector(".stages__description.third").classList.add('active');
-    }, 151);
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.third").classList.add('opacity');
-      document.querySelector(".stages__description.third").classList.add('opacity');
-    }, 300);
-    // action on screan
+    if (stages.includes(value)) {
+      dateSlider.classList.add('third');
+      stageSlider.classList.add('third');
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.third").classList.add('active');
+        document.querySelector(".stages__description.third").classList.add('active');
+      }, 151);
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.third").classList.add('opacity');
+        document.querySelector(".stages__description.third").classList.add('opacity');
+      }, 300);
+      // action on screan
       document.querySelector(".view__iframe-website.pc").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-website.phone").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.phone").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.phone").classList.remove('onscrean');
+    } else {
+      // chenge value to next when this value is NOT using
+      inputSlider.value = 30;
+      var event = new MouseEvent("input", {
+        bubbles: true,
+        cancelable: true,
+      });
+      inputSlider.dispatchEvent(event);
+    }
   } if (value == 30) {
-    dateSlider.classList.add('four');
-    stageSlider.classList.add('four');
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.four").classList.add('active');
-      document.querySelector(".stages__description.four").classList.add('active');
-    }, 151);
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.four").classList.add('opacity');
-      document.querySelector(".stages__description.four").classList.add('opacity');
-    }, 300);
-    // action on screan
+    if (stages.includes(value)) {
+      dateSlider.classList.add('four');
+      stageSlider.classList.add('four');
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.four").classList.add('active');
+        document.querySelector(".stages__description.four").classList.add('active');
+      }, 151);
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.four").classList.add('opacity');
+        document.querySelector(".stages__description.four").classList.add('opacity');
+      }, 300);
+      // action on screan
       document.querySelector(".view__iframe-website.pc").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-website.phone").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.phone").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.phone").classList.remove('onscrean');
+    } else {
+      // chenge value to next when this value is NOT using
+      inputSlider.value = 40;
+      var event = new MouseEvent("input", {
+        bubbles: true,
+        cancelable: true,
+      });
+      inputSlider.dispatchEvent(event);
+    }
   } if (value == 40) {
-    dateSlider.classList.add('five');
-    stageSlider.classList.add('five');
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.five").classList.add('active');
-      document.querySelector(".stages__description.five").classList.add('active');
-    }, 151);
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.five").classList.add('opacity');
-      document.querySelector(".stages__description.five").classList.add('opacity');
-    }, 300);
-    // action on screan
+    if (stages.includes(value)) {
+      dateSlider.classList.add('five');
+      stageSlider.classList.add('five');
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.five").classList.add('active');
+        document.querySelector(".stages__description.five").classList.add('active');
+      }, 151);
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.five").classList.add('opacity');
+        document.querySelector(".stages__description.five").classList.add('opacity');
+      }, 300);
+      // action on screan
       document.querySelector(".view__iframe-website.pc").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-website.phone").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.phone").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.phone").classList.remove('onscrean');
-
-      // when value is not needed
+    } else {
+      // chenge value to next when this value is NOT using
       inputSlider.value = 50;
       var event = new MouseEvent("input", {
         bubbles: true,
         cancelable: true,
       });
       inputSlider.dispatchEvent(event);
+    }
   } if (value == 50) {
-    dateSlider.classList.add('six');
-    stageSlider.classList.add('six');
-    document.querySelector(".stages__block-added-el.six").classList.add('active');
-    document.querySelector(".stages__description.six").classList.add('active');
-    setTimeout(() => {
+    if (stages.includes(value)) {
+      dateSlider.classList.add('six');
+      stageSlider.classList.add('six');
       document.querySelector(".stages__block-added-el.six").classList.add('active');
       document.querySelector(".stages__description.six").classList.add('active');
-    }, 151);
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.six").classList.add('opacity');
-      document.querySelector(".stages__description.six").classList.add('opacity');
-    }, 300);
-    // action on screan
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.six").classList.add('active');
+        document.querySelector(".stages__description.six").classList.add('active');
+      }, 151);
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.six").classList.add('opacity');
+        document.querySelector(".stages__description.six").classList.add('opacity');
+      }, 300);
+      // action on screan
       document.querySelector(".view__iframe-website.pc").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-website.phone").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.phone").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.phone").classList.remove('onscrean');
+    } else {
+      // chenge value to next when this value is NOT using
+      inputSlider.value = 60;
+      var event = new MouseEvent("input", {
+        bubbles: true,
+        cancelable: true,
+      });
+      inputSlider.dispatchEvent(event);
+    }
   } if (value == 60) {
-    dateSlider.classList.add('seven');
-    stageSlider.classList.add('seven');
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.seven").classList.add('active');
-      document.querySelector(".stages__description.seven").classList.add('active');
-    }, 151);
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.seven").classList.add('opacity');
-      document.querySelector(".stages__description.seven").classList.add('opacity');
-    }, 300);
-    // action on screan
+    if (stages.includes(value)) {
+      dateSlider.classList.add('seven');
+      stageSlider.classList.add('seven');
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.seven").classList.add('active');
+        document.querySelector(".stages__description.seven").classList.add('active');
+      }, 151);
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.seven").classList.add('opacity');
+        document.querySelector(".stages__description.seven").classList.add('opacity');
+      }, 300);
+      // action on screan
       document.querySelector(".view__iframe-website.pc").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-website.phone").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.phone").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.phone").classList.remove('onscrean');
+    } else {
+      // chenge value to next when this value is NOT using
+      inputSlider.value = 70;
+      var event = new MouseEvent("input", {
+        bubbles: true,
+        cancelable: true,
+      });
+      inputSlider.dispatchEvent(event);
+    }
   } if (value == 70) {
-    dateSlider.classList.add('eight');
-    stageSlider.classList.add('eight');
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.eight").classList.add('active');
-      document.querySelector(".stages__description.eight").classList.add('active');
-    }, 151);
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.eight").classList.add('opacity');
-      document.querySelector(".stages__description.eight").classList.add('opacity');
-    }, 300);
-    // action on screan
+    if (stages.includes(value)) {
+      dateSlider.classList.add('eight');
+      stageSlider.classList.add('eight');
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.eight").classList.add('active');
+        document.querySelector(".stages__description.eight").classList.add('active');
+      }, 151);
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.eight").classList.add('opacity');
+        document.querySelector(".stages__description.eight").classList.add('opacity');
+      }, 300);
+      // action on screan
       document.querySelector(".view__iframe-website.pc").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-website.phone").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.phone").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.phone").classList.remove('onscrean');
+    } else {
+      // chenge value to next when this value is NOT using
+      inputSlider.value = 80;
+      var event = new MouseEvent("input", {
+        bubbles: true,
+        cancelable: true,
+      });
+      inputSlider.dispatchEvent(event);
+    }
   } if (value == 80) {
-    dateSlider.classList.add('nine');
-    stageSlider.classList.add('nine');
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.nine").classList.add('active');
-      document.querySelector(".stages__description.nine").classList.add('active');
-    }, 151);
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.nine").classList.add('opacity');
-      document.querySelector(".stages__description.nine").classList.add('opacity');
-    }, 300);
-    // action on screan
+    if (stages.includes(value)) {
+      dateSlider.classList.add('nine');
+      stageSlider.classList.add('nine');
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.nine").classList.add('active');
+        document.querySelector(".stages__description.nine").classList.add('active');
+      }, 151);
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.nine").classList.add('opacity');
+        document.querySelector(".stages__description.nine").classList.add('opacity');
+      }, 300);
+      // action on screan
       document.querySelector(".view__iframe-website.pc").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-website.phone").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.phone").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.phone").classList.remove('onscrean');
+    } else {
+      // chenge value to next when this value is NOT using
+      inputSlider.value = 90;
+      var event = new MouseEvent("input", {
+        bubbles: true,
+        cancelable: true,
+      });
+      inputSlider.dispatchEvent(event);
+    }
   } if (value == 90) {
-    dateSlider.classList.add('ten');
-    stageSlider.classList.add('ten');
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.ten").classList.add('active');
-      document.querySelector(".stages__description.ten").classList.add('active');
-    }, 151);
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.ten").classList.add('opacity');
-      document.querySelector(".stages__description.ten").classList.add('opacity');
-    }, 300);
-    // action on screan
+    if (stages.includes(value)) {
+      dateSlider.classList.add('ten');
+      stageSlider.classList.add('ten');
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.ten").classList.add('active');
+        document.querySelector(".stages__description.ten").classList.add('active');
+      }, 151);
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.ten").classList.add('opacity');
+        document.querySelector(".stages__description.ten").classList.add('opacity');
+      }, 300);
+      // action on screan
       document.querySelector(".view__iframe-website.pc").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-website.phone").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.phone").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.phone").classList.remove('onscrean');
+    } else {
+      // chenge value to next when this value is NOT using
+      inputSlider.value = 100;
+      var event = new MouseEvent("input", {
+        bubbles: true,
+        cancelable: true,
+      });
+      inputSlider.dispatchEvent(event);
+    }
   } if (value == 100) {
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.eleven").classList.add('active');
-      document.querySelector(".stages__description.eleven").classList.add('active');
-    }, 151);
-    setTimeout(() => {
-      document.querySelector(".stages__block-added-el.eleven").classList.add('opacity');
-      document.querySelector(".stages__description.eleven").classList.add('opacity');
-    }, 300);
-    // action on screan
+    if (stages.includes(value)) {
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.eleven").classList.add('active');
+        document.querySelector(".stages__description.eleven").classList.add('active');
+      }, 151);
+      setTimeout(() => {
+        document.querySelector(".stages__block-added-el.eleven").classList.add('opacity');
+        document.querySelector(".stages__description.eleven").classList.add('opacity');
+      }, 300);
+      // action on screan
       document.querySelector(".view__iframe-website.pc").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.pc").classList.remove('onscrean');
       document.querySelector(".view__iframe-website.phone").classList.add('onscrean');
       document.querySelector(".view__iframe-briefing.phone").classList.remove('onscrean');
       document.querySelector(".view__iframe-figma.phone").classList.remove('onscrean');
+    } else {
+      // chenge value to next when this value is NOT using
+      inputSlider.value = Math.max(...stagesToNum);
+      var event = new MouseEvent("input", {
+        bubbles: true,
+        cancelable: true,
+      });
+      inputSlider.dispatchEvent(event);
+    }
   }
 }, false);
+
+let content = document.body.querySelector('.header')
+content.classList.add('nonee')
 
 const iframePc = document.querySelector(".view__block-pc");
 const iframePhone = document.querySelector(".view__block-mobile");
