@@ -7,17 +7,7 @@ const stageAddedEl = document.querySelector(".stages__block-added-el")
 const stageDesc = document.querySelector(".stages__description")
 let stagesToNum = stages.map(Number)
 
-slideValue.textContent = todayStage;
-slideValue.style.left = (todayStage) + "%";
-inputBg.style.width = (todayStage) + "%";
-
-      inputSlider.value = todayStage;
-      var event = new MouseEvent("input", {
-        bubbles: true,
-        cancelable: true,
-      });
-      inputSlider.dispatchEvent(event);
-
+// doing when sliding
 window.addEventListener('input', function (e) {
   let value = inputSlider.value;
   slideValue.textContent = value;
@@ -389,9 +379,7 @@ window.addEventListener('input', function (e) {
   }
 }, false);
 
-let content = document.body.querySelector('.header')
-content.classList.add('nonee')
-
+// loading webpage iframe
 const iframePc = document.querySelector(".view__block-pc");
 const iframePhone = document.querySelector(".view__block-mobile");
 loadIframe = function() {
@@ -412,6 +400,7 @@ loadIframe = function() {
   }
 }
 
+// loading figma
 loadFigmaIframe = function() {
   const iframeUrlFigmaPc = iframePc.dataset.srcFigma;
   const iframeUrlFigmaPhone = iframePhone.dataset.srcFigma;
@@ -430,6 +419,7 @@ loadFigmaIframe = function() {
   }
 }
 
+// loading background
 $(window).on('load', function () {
   whenPageIsLoaded = function() {
     loadIframe()
@@ -438,6 +428,7 @@ $(window).on('load', function () {
   setTimeout(whenPageIsLoaded, 100);
 })
 
+// full screen
 $('.view__btn-full-screen-pc,.view__bg-shadow').click(function(){
   $('.view__block-pc,.view__btn-full-screen-pc,.view__container,.view__bg-shadow').toggleClass('active');
 })
