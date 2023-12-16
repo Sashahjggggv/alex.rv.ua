@@ -457,6 +457,7 @@ body {
 
   &__value {
     position: relative;
+    z-index: 1;
     width: 100%;
     transform: scale(0.945);
   }
@@ -506,6 +507,7 @@ body {
   &__input {
     position: relative;
     -webkit-appearance: none;
+    z-index: 2;
     width: 100%;
     height: 10px;
     background: transparent;
@@ -562,6 +564,36 @@ body {
     width: 100%;
     background: #fff;
     border-radius: 10px;
+  }
+
+  &__dots {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 100%;
+    padding: 0 2.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: none;
+    &.active {
+      background: #FFA500;
+    }
+  
+    &.now {
+      width: 25px;
+      height: 25px;
+      background: red;
+    }
   }
 }
 

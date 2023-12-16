@@ -7,6 +7,81 @@ const stageAddedEl = document.querySelector(".stages__block-added-el")
 const stageDesc = document.querySelector(".stages__description")
 let stagesToNum = stages.map(Number)
 
+// now stage to screen 
+inputSlider.value = todayStage;
+slideValue.textContent = todayStage;
+slideValue.style.left = (todayStage) + "%";
+inputBg.style.width = (todayStage) + "%";
+
+// Set the value of the range input
+inputSlider.value = todayStage;
+// Simulate a mouse click
+var event = new MouseEvent("click", {
+  bubbles: true,
+  cancelable: true,
+  view: window
+});
+inputSlider.dispatchEvent(event);
+
+// adding stages dots to slider
+if (stagesToNum.includes(0)) {
+  $('.slider__dot.first').addClass('active')
+} 
+if (stagesToNum.includes(10)) {
+  $('.slider__dot.second').addClass('active')
+} 
+if (stagesToNum.includes(20)) {
+  $('.slider__dot.third').addClass('active')
+} 
+if (stagesToNum.includes(30)) {
+  $('.slider__dot.four').addClass('active')
+} 
+if (stagesToNum.includes(40)) {
+  $('.slider__dot.five').addClass('active')
+} 
+if (stagesToNum.includes(50)) {
+  $('.slider__dot.six').addClass('active')
+} 
+if (stagesToNum.includes(60)) {
+  $('.slider__dot.seven').addClass('active')
+} 
+if (stagesToNum.includes(70)) {
+  $('.slider__dot.eight').addClass('active')
+} 
+if (stagesToNum.includes(80)) {
+  $('.slider__dot.nine').addClass('active')
+} 
+if (stagesToNum.includes(90)) {
+  $('.slider__dot.ten').addClass('active')
+} 
+if (stagesToNum.includes(100)) {
+  $('.slider__dot.eleven').addClass('active')
+}
+
+if (todayStage == 0) {
+  $('.slider__dot.first').addClass('now')
+} if (todayStage == 10) {
+  $('.slider__dot.second').addClass('now')
+} if (todayStage == 20) {
+  $('.slider__dot.third').addClass('now')
+} if (todayStage == 30) {
+  $('.slider__dot.four').addClass('now')
+} if (todayStage == 40) {
+  $('.slider__dot.five').addClass('now')
+} if (todayStage == 50) {
+  $('.slider__dot.six').addClass('now')
+} if (todayStage == 60) {
+  $('.slider__dot.seven').addClass('now')
+} if (todayStage == 70) {
+  $('.slider__dot.eight').addClass('now')
+} if (todayStage == 80) {
+  $('.slider__dot.nine').addClass('now')
+} if (todayStage == 90) {
+  $('.slider__dot.ten').addClass('now')
+} if (todayStage == 100) {
+  $('.slider__dot.eleven').addClass('now')
+}
+
 // doing when sliding
 window.addEventListener('input', function (e) {
   let value = inputSlider.value;
