@@ -55,9 +55,11 @@ sendMessageToPcAndPhone = function() {
   const iframeUrlPc = iframePc.dataset.srcWebsite;
   const iframeUrlPhone = iframePhone.dataset.srcWebsite;
   if (iframeUrlPc) {
+    console.log('PC message sended')
     iframeWebsite.contentWindow.postMessage(value, thisDomain)
   }
   if (iframeUrlPhone) {
+    console.log('phone message sended')
     iframeWebsite.contentWindow.postMessage(value, thisDomain)
   }
 }
