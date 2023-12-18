@@ -60,10 +60,10 @@ sendMessageToPcAndPhone = function() {
     console.log('PC message sended')
     iframeWebsitePC.contentWindow.postMessage(value, thisDomain)
   }
-  // if (iframeUrlPhone) {
-  //   console.log('phone message sended')
-  //   iframeWebsitePhone.contentWindow.postMessage(value, thisDomain)
-  // }
+  if (iframeUrlPhone) {
+    console.log('phone message sended')
+    iframeWebsitePhone.contentWindow.postMessage(value, thisDomain)
+  }
 }
 
 // now stage to screen
