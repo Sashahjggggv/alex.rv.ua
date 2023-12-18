@@ -5,6 +5,8 @@ const dateSlider = document.querySelector(".stages__date-block-slider")
 const stageSlider = document.querySelector(".stages__stage-title-slider")
 const stageAddedEl = document.querySelector(".stages__block-added-el")
 const stageDesc = document.querySelector(".stages__description")
+let iframeWebsite = ""
+let value = todayStage;
 let stagesToNum = stages.map(Number)
 
 let iframeWebpageLoaded = false
@@ -28,6 +30,7 @@ loadIframe = function() {
     )
   }
   iframeWebpageLoaded = true
+  iframeWebsite = document.querySelector(".view__iframe-website");
 }
 // loading figma
 loadFigmaIframe = function() {
@@ -401,7 +404,7 @@ if (todayStage == 0) {
 
 // doing when sliding
 window.addEventListener('input', function (e) {
-  let value = inputSlider.value;
+  value = inputSlider.value;
   slideValue.textContent = value;
   slideValue.style.left = (value) + "%";
   inputBg.style.width = (value) + "%";
@@ -456,8 +459,6 @@ window.addEventListener('input', function (e) {
     document.querySelector(".stages__block-added-el.eleven").classList.remove('active');
     document.querySelector(".stages__description.eleven").classList.remove('active');
   }, 150);
-  
-  const iframeWebsite = document.querySelector(".view__iframe-website");
   
   if (value == 0) {
     if (stages.includes(value)) {
@@ -854,6 +855,12 @@ window.addEventListener('input', function (e) {
     }
   }
 }, false);
+
+// sending value every 0.5s
+function postMessageToIframe() {
+  iframeWebsite.contentWindow.postMessage(value, thisDomain)
+}
+setInterval(postMessageToIframe, 500);
 
 // loading background
 $(window).on('load', function () {
