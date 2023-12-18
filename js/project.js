@@ -51,6 +51,17 @@ loadFigmaIframe = function() {
   iframeFigmaLoaded = true
 }
 
+sendMessageToPcAndPhone = function() {
+  const iframeUrlPc = iframePc.dataset.srcWebsite;
+  const iframeUrlPhone = iframePhone.dataset.srcWebsite;
+  if (iframeUrlPc) {
+    iframeWebsite.contentWindow.postMessage(value, thisDomain)
+  }
+  if (iframeUrlPhone) {
+    iframeWebsite.contentWindow.postMessage(value, thisDomain)
+  }
+}
+
 // now stage to screen
 inputSlider.value = todayStage;
 slideValue.textContent = todayStage;
@@ -109,7 +120,7 @@ if (todayStage == 0) {
   }
 } if (todayStage == 20) {
   if (!iframeWebpageLoaded) {loadIframe()}
-  iframeWebsite.contentWindow.postMessage(value, thisDomain)
+  sendMessageToPcAndPhone()
   dateSlider.classList.add('third');
   stageSlider.classList.add('third');
   setTimeout(() => {
@@ -135,7 +146,7 @@ if (todayStage == 0) {
   }
 } if (todayStage == 30) {
   if (!iframeWebpageLoaded) {loadIframe()}
-  iframeWebsite.contentWindow.postMessage(value, thisDomain)
+  sendMessageToPcAndPhone()
   dateSlider.classList.add('four');
   stageSlider.classList.add('four');
   setTimeout(() => {
@@ -161,7 +172,7 @@ if (todayStage == 0) {
   }
 } if (todayStage == 40) {
   if (!iframeWebpageLoaded) {loadIframe()}
-  iframeWebsite.contentWindow.postMessage(value, thisDomain)
+  sendMessageToPcAndPhone()
   dateSlider.classList.add('five');
   stageSlider.classList.add('five');
   setTimeout(() => {
@@ -187,7 +198,7 @@ if (todayStage == 0) {
   }
 } if (todayStage == 50) {
   if (!iframeWebpageLoaded) {loadIframe()}
-  iframeWebsite.contentWindow.postMessage(value, thisDomain)
+  sendMessageToPcAndPhone()
   dateSlider.classList.add('six');
   stageSlider.classList.add('six');
   document.querySelector(".stages__block-added-el.six").classList.add('active');
@@ -215,7 +226,7 @@ if (todayStage == 0) {
   }
 } if (todayStage == 60) {
   if (!iframeWebpageLoaded) {loadIframe()}
-  iframeWebsite.contentWindow.postMessage(value, thisDomain)
+  sendMessageToPcAndPhone()
   dateSlider.classList.add('seven');
   stageSlider.classList.add('seven');
   setTimeout(() => {
@@ -241,7 +252,7 @@ if (todayStage == 0) {
   }
 } if (todayStage == 70) {
   if (!iframeWebpageLoaded) {loadIframe()}
-  iframeWebsite.contentWindow.postMessage(value, thisDomain)
+  sendMessageToPcAndPhone()
   dateSlider.classList.add('eight');
   stageSlider.classList.add('eight');
   setTimeout(() => {
@@ -267,7 +278,7 @@ if (todayStage == 0) {
   }
 } if (todayStage == 80) {
   if (!iframeWebpageLoaded) {loadIframe()}
-  iframeWebsite.contentWindow.postMessage(value, thisDomain)
+  sendMessageToPcAndPhone()
   dateSlider.classList.add('nine');
   stageSlider.classList.add('nine');
   setTimeout(() => {
@@ -293,7 +304,7 @@ if (todayStage == 0) {
   }
 } if (todayStage == 90) {
   if (!iframeWebpageLoaded) {loadIframe()}
-  iframeWebsite.contentWindow.postMessage(value, thisDomain)
+  sendMessageToPcAndPhone()
   dateSlider.classList.add('ten');
   stageSlider.classList.add('ten');
   setTimeout(() => {
@@ -319,7 +330,7 @@ if (todayStage == 0) {
   }
 } if (todayStage == 100) {
   if (!iframeWebpageLoaded) {loadIframe()}
-  iframeWebsite.contentWindow.postMessage(value, thisDomain)
+  sendMessageToPcAndPhone()
   setTimeout(() => {
     document.querySelector(".stages__block-added-el.eleven").classList.add('active');
     document.querySelector(".stages__description.eleven").classList.add('active');
@@ -532,7 +543,7 @@ window.addEventListener('input', function (e) {
   } if (value == 20) {
     if (stages.includes(value)) {
       if (!iframeWebpageLoaded) {loadIframe()}
-      iframeWebsite.contentWindow.postMessage(value, thisDomain)
+      sendMessageToPcAndPhone()
       dateSlider.classList.add('third');
       stageSlider.classList.add('third');
       setTimeout(() => {
@@ -568,7 +579,7 @@ window.addEventListener('input', function (e) {
   } if (value == 30) {
     if (stages.includes(value)) {
       if (!iframeWebpageLoaded) {loadIframe()}
-      iframeWebsite.contentWindow.postMessage(value, thisDomain)
+      sendMessageToPcAndPhone()
       dateSlider.classList.add('four');
       stageSlider.classList.add('four');
       setTimeout(() => {
@@ -604,7 +615,7 @@ window.addEventListener('input', function (e) {
   } if (value == 40) {
     if (stages.includes(value)) {
       if (!iframeWebpageLoaded) {loadIframe()}
-      iframeWebsite.contentWindow.postMessage(value, thisDomain)
+      sendMessageToPcAndPhone()
       dateSlider.classList.add('five');
       stageSlider.classList.add('five');
       setTimeout(() => {
@@ -640,7 +651,7 @@ window.addEventListener('input', function (e) {
   } if (value == 50) {
     if (stages.includes(value)) {
       if (!iframeWebpageLoaded) {loadIframe()}
-      iframeWebsite.contentWindow.postMessage(value, thisDomain)
+      sendMessageToPcAndPhone()
       dateSlider.classList.add('six');
       stageSlider.classList.add('six');
       document.querySelector(".stages__block-added-el.six").classList.add('active');
@@ -678,7 +689,7 @@ window.addEventListener('input', function (e) {
   } if (value == 60) {
     if (stages.includes(value)) {
       if (!iframeWebpageLoaded) {loadIframe()}
-      iframeWebsite.contentWindow.postMessage(value, thisDomain)
+      sendMessageToPcAndPhone()
       dateSlider.classList.add('seven');
       stageSlider.classList.add('seven');
       setTimeout(() => {
@@ -714,7 +725,7 @@ window.addEventListener('input', function (e) {
   } if (value == 70) {
     if (stages.includes(value)) {
       if (!iframeWebpageLoaded) {loadIframe()}
-      iframeWebsite.contentWindow.postMessage(value, thisDomain)
+      sendMessageToPcAndPhone()
       dateSlider.classList.add('eight');
       stageSlider.classList.add('eight');
       setTimeout(() => {
@@ -750,7 +761,7 @@ window.addEventListener('input', function (e) {
   } if (value == 80) {
     if (stages.includes(value)) {
       if (!iframeWebpageLoaded) {loadIframe()}
-      iframeWebsite.contentWindow.postMessage(value, thisDomain)
+      sendMessageToPcAndPhone()
       dateSlider.classList.add('nine');
       stageSlider.classList.add('nine');
       setTimeout(() => {
@@ -786,7 +797,7 @@ window.addEventListener('input', function (e) {
   } if (value == 90) {
     if (stages.includes(value)) {
       if (!iframeWebpageLoaded) {loadIframe()}
-      iframeWebsite.contentWindow.postMessage(value, thisDomain)
+      sendMessageToPcAndPhone()
       dateSlider.classList.add('ten');
       stageSlider.classList.add('ten');
       setTimeout(() => {
@@ -822,7 +833,7 @@ window.addEventListener('input', function (e) {
   } if (value == 100) {
     if (stages.includes(value)) {
       if (!iframeWebpageLoaded) {loadIframe()}
-      iframeWebsite.contentWindow.postMessage(value, thisDomain)
+      sendMessageToPcAndPhone()
       setTimeout(() => {
         document.querySelector(".stages__block-added-el.eleven").classList.add('active');
         document.querySelector(".stages__description.eleven").classList.add('active');
@@ -858,7 +869,7 @@ window.addEventListener('input', function (e) {
 
 // sending value every 0.5s
 function postMessageToIframe() {
-  iframeWebsite.contentWindow.postMessage(value, thisDomain)
+  sendMessageToPcAndPhone()
 }
 setInterval(postMessageToIframe, 500);
 
