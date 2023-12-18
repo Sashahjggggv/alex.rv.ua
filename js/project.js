@@ -5,7 +5,8 @@ const dateSlider = document.querySelector(".stages__date-block-slider")
 const stageSlider = document.querySelector(".stages__stage-title-slider")
 const stageAddedEl = document.querySelector(".stages__block-added-el")
 const stageDesc = document.querySelector(".stages__description")
-let iframeWebsite = ""
+let iframeWebsitePC = ""
+let iframeWebsitePhone = ""
 let value = todayStage;
 let stagesToNum = stages.map(Number)
 
@@ -23,14 +24,15 @@ loadIframe = function() {
       '<iframe class="view__pc-iframe view__iframe-website pc" src="' + iframeUrlPc + '"></iframe>'
     )
   }
+  iframeWebsitePC = document.querySelector(".view__pc-iframe");
   if (iframeUrlPhone) {
     iframePhone.insertAdjacentHTML(
       "beforeend",
       '<iframe class="view__iphone-iframe view__iframe-website phone" src="' + iframeUrlPhone + '"></iframe>'
     )
   }
+  iframeWebsitePhone = document.querySelector(".view__iphone-iframe");
   iframeWebpageLoaded = true
-  iframeWebsite = document.querySelector(".view__iframe-website");
 }
 // loading figma
 loadFigmaIframe = function() {
@@ -56,11 +58,11 @@ sendMessageToPcAndPhone = function() {
   const iframeUrlPhone = iframePhone.dataset.srcWebsite;
   if (iframeUrlPc) {
     console.log('PC message sended')
-    iframeWebsite.contentWindow.postMessage(value, thisDomain)
+    iframeWebsitePC.contentWindow.postMessage(value, thisDomain)
   }
   if (iframeUrlPhone) {
     console.log('phone message sended')
-    iframeWebsite.contentWindow.postMessage(value, thisDomain)
+    iframeWebsitePhone.contentWindow.postMessage(value, thisDomain)
   }
 }
 
