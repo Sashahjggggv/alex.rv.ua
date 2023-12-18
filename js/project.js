@@ -24,14 +24,14 @@ loadIframe = function() {
       '<iframe class="view__pc-iframe view__iframe-website pc" src="' + iframeUrlPc + '"></iframe>'
     )
   }
-  iframeWebsitePC = document.querySelector(".view__pc-iframe");
+  iframeWebsitePC = document.querySelector(".view__iframe-website.pc");
   if (iframeUrlPhone) {
     iframePhone.insertAdjacentHTML(
       "beforeend",
       '<iframe class="view__iphone-iframe view__iframe-website phone" src="' + iframeUrlPhone + '"></iframe>'
     )
   }
-  iframeWebsitePhone = document.querySelector(".view__iphone-iframe");
+  iframeWebsitePhone = document.querySelector(".view__iframe-website.phone");
   iframeWebpageLoaded = true
 }
 // loading figma
