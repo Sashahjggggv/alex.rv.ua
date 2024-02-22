@@ -3,12 +3,8 @@ body {
   background-color: #181c27;
 }
 
-.footer {
-  background: rgba(255, 255, 255, 0.2117647059);
-}
-
 .top {
-  padding-top: 100px;
+  padding-top: 130px;
 }
 .top__title {
   color: #ffa500;
@@ -17,6 +13,7 @@ body {
 .top__paragraf {
   font-size: 22px;
   color: #fff;
+  margin: 0;
 }
 
 .projects {
@@ -54,14 +51,16 @@ body {
   -webkit-clip-path: inset(0 51% 51% 0);
           clip-path: inset(0 51% 51% 0);
 }
+.projects__project:hover {
+  /* & .projects__blur {
+    text-decoration: underline;
+  } */
+}
 .projects__project:hover::before {
   animation: clippath 5s infinite linear;
 }
 .projects__project:hover::after {
   animation: clippath 5s infinite -2.5s linear;
-}
-.projects__project:hover .projects__blur {
-  text-decoration: underline;
 }
 .projects__blur {
   position: absolute;

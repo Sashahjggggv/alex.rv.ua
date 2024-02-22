@@ -3,12 +3,8 @@ body {
   background-color: #181c27;
 }
 
-.footer {
-  background: #ffffff36;
-}
-
 .top {
-  padding-top: 100px;
+  padding-top: 130px;
 
   &__container {
   }
@@ -21,6 +17,7 @@ body {
   &__paragraf {
     font-size: 22px;
     color: #fff;
+    margin: 0;
   }
 }
 
@@ -71,9 +68,9 @@ body {
       &::after {
         animation: clippath 5s infinite -2.5s linear;
       }
-      & .projects__blur {
+      /* & .projects__blur {
         text-decoration: underline;
-      }
+      } */
     }
   }
 
@@ -102,6 +99,7 @@ body {
   &__project-image {
     border-radius: 30px;
     width: 100%;
+
   }
 }
 
