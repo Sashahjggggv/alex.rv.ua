@@ -369,9 +369,9 @@
 }
 
 @media (max-width: 1100px) {
-  .container {
+  /* .container {
     padding: 0 20px;
-  }
+  } */
   .all-team__block-name {
     top: 90px;
     left: 20px;
