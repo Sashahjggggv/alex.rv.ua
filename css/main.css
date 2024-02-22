@@ -717,6 +717,7 @@ body {
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
+  white-space: nowrap;
 }
 .footer__contact-link:last-child {
   margin-bottom: 0;
@@ -867,6 +868,7 @@ body {
   }
   .footer {
     padding: 20px 0;
+    margin: 5px 20px;
   }
   .footer__logo:hover .footer__logo-text-underline {
     width: 0;
