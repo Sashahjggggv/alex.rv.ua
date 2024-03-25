@@ -1,8 +1,14 @@
-$('g').click(function(){
-  $('.team-members')[0].scrollIntoView({behavior: "smooth"});
+$('path').click(function(){
+  $('.all-team__block-name,.all-team__cloud').addClass('none');
+  $('.all-team__left-blocks,.all-team__projects').addClass('active');
 })
-$('g.people1').mouseover(function(){
+$('.circles-choose__img').click(function(){
+  $('.all-team__block-name').addClass('none');
+  $('.all-team__left-blocks,.all-team__projects').addClass('active');
+})
+$('path.people1,.circles-choose__img.first').mouseover(function(){
   $('.circle').addClass('active')
+  $('.circles-choose__img.first,path.people1').addClass('hover')
   $('.all-team__block-description').addClass('opacity')
   setTimeout(function () {
     $('.all-team__block-description').addClass('none')
@@ -12,8 +18,9 @@ $('g.people1').mouseover(function(){
     }, 20);
   }, 150);
 })
-$('g.people1').mouseleave(function(){
+$('path.people1,.circles-choose__img.first').mouseleave(function(){
   $('.circle').removeClass('active')
+  $('.circles-choose__img.first,path.people1').removeClass('hover')
   $('.people1name').removeClass('opacity')
   setTimeout(function () {
     $('.people1name').removeClass('active')
@@ -23,11 +30,18 @@ $('g.people1').mouseleave(function(){
     }, 50);
   }, 150);
 })
-$('g.people1').click(function(){
+$('.circles-choose__img.first').mouseover(function(){
+  $('path.people1,.circles-choose__img.first').addClass('hover')
+})
+$('.circles-choose__img.first').mouseleave(function(){
+  $('path.people1,.circles-choose__img.first').removeClass('hover')
+})
+$('path.people1').click(function(){
   $('.circles-choose__img.first').click();
 })
-$('g.people2').mouseover(function(){
+$('path.people2,.circles-choose__img.second').mouseover(function(){
   $('.circle').addClass('active')
+  $('.circles-choose__img.second,path.people2').addClass('hover')
   $('.all-team__block-description').addClass('opacity')
   setTimeout(function () {
     $('.all-team__block-description').addClass('none')
@@ -37,8 +51,9 @@ $('g.people2').mouseover(function(){
     }, 20);
   }, 150);
 })
-$('g.people2').mouseleave(function(){
+$('path.people2,.circles-choose__img.second').mouseleave(function(){
   $('.circle').removeClass('active')
+  $('.circles-choose__img.second,path.people2').removeClass('hover')
   $('.people2name').removeClass('opacity')
   setTimeout(function () {
     $('.people2name').removeClass('active')
@@ -48,11 +63,18 @@ $('g.people2').mouseleave(function(){
     }, 50);
   }, 150);
 })
-$('g.people2').click(function(){
+$('.circles-choose__img.second').mouseover(function(){
+  $('path.people2,.circles-choose__img.second').addClass('hover')
+})
+$('.circles-choose__img.second').mouseleave(function(){
+  $('path.people2,.circles-choose__img.second').removeClass('hover')
+})
+$('path.people2').click(function(){
   $('.circles-choose__img.second').click();
 })
-$('g.people3').mouseover(function(){
+$('path.people3,.circles-choose__img.third').mouseover(function(){
   $('.circle').addClass('active')
+  $('.circles-choose__img.third,path.people3').addClass('hover')
   $('.all-team__block-description').addClass('opacity')
   setTimeout(function () {
     $('.all-team__block-description').addClass('none')
@@ -62,8 +84,9 @@ $('g.people3').mouseover(function(){
     }, 20);
   }, 150);
 })
-$('g.people3').mouseleave(function(){
+$('path.people3,.circles-choose__img.third').mouseleave(function(){
   $('.circle').removeClass('active')
+  $('.circles-choose__img.third,path.people3').removeClass('hover')
   $('.people3name').removeClass('opacity')
   setTimeout(function () {
     $('.people3name').removeClass('active')
@@ -73,11 +96,18 @@ $('g.people3').mouseleave(function(){
     }, 50);
   }, 150);
 })
-$('g.people3').click(function(){
+$('.circles-choose__img.third').mouseover(function(){
+  $('path.people3,.circles-choose__img.third').addClass('hover')
+})
+$('.circles-choose__img.third').mouseleave(function(){
+  $('path.people3,.circles-choose__img.third').removeClass('hover')
+})
+$('path.people3').click(function(){
   $('.circles-choose__img.third').click();
 })
-$('g.people4').mouseover(function(){
+$('path.people4,.circles-choose__img.fourth').mouseover(function(){
   $('.circle').addClass('active')
+  $('.circles-choose__img.fourth,path.people4').addClass('hover')
   $('.all-team__block-description').addClass('opacity')
   setTimeout(function () {
     $('.all-team__block-description').addClass('none')
@@ -87,8 +117,9 @@ $('g.people4').mouseover(function(){
     }, 20);
   }, 150);
 })
-$('g.people4').mouseleave(function(){
+$('path.people4,.circles-choose__img.fourth').mouseleave(function(){
   $('.circle').removeClass('active')
+  $('.circles-choose__img.fourth,path.people4').removeClass('hover')
   $('.people4name').removeClass('opacity')
   setTimeout(function () {
     $('.people4name').removeClass('active')
@@ -98,7 +129,13 @@ $('g.people4').mouseleave(function(){
     }, 50);
   }, 150);
 })
-$('g.people4').click(function(){
+$('.circles-choose__img.fourth').mouseover(function(){
+  $('path.people4,.circles-choose__img.fourth').addClass('hover')
+})
+$('.circles-choose__img.fourth').mouseleave(function(){
+  $('path.people4,.circles-choose__img.fourth').removeClass('hover')
+})
+$('path.people4').click(function(){
   $('.circles-choose__img.fourth').click();
 })
 
@@ -115,35 +152,45 @@ funcMoveCircleNearMouse = function() {}
 $(window).on('mousemove', moveCircle);
 
 $('.circles-choose__img.first').click(function(event){
-  $('.circles-choose__img').removeClass('active');
-  $('.circles-choose__img.first').addClass('active');
+  $('.circles-choose__img,path.people1,path.people2,path.people3,path.people4').removeClass('active');
+  $('.circles-choose__img.first,path.people1').addClass('active');
   $('.team-members__imgs,.skills__slider,.account__slider-logos,.account__slider-names,.profession__slider,.projects__slider').removeClass('first second third fourth');
 })
 $('.circles-choose__img.second').click(function(event){
-  $('.circles-choose__img').removeClass('active');
-  $('.circles-choose__img.second').addClass('active');
+  $('.circles-choose__img,path.people1,path.people2,path.people3,path.people4').removeClass('active');
+  $('.circles-choose__img.second,path.people2').addClass('active');
   $('.team-members__imgs,.skills__slider,.account__slider-logos,.account__slider-names,.profession__slider,.projects__slider').removeClass('first second third fourth');
   $('.team-members__imgs,.skills__slider,.account__slider-logos,.account__slider-names,.profession__slider,.projects__slider').addClass('second');
 })
 $('.circles-choose__img.third').click(function(event){
-  $('.circles-choose__img').removeClass('active');
-  $('.circles-choose__img.third').addClass('active');
+  $('.circles-choose__img,path.people1,path.people2,path.people3,path.people4').removeClass('active');
+  $('.circles-choose__img.third,path.people3').addClass('active');
   $('.team-members__imgs,.skills__slider,.account__slider-logos,.account__slider-names,.profession__slider,.projects__slider').removeClass('first second third fourth');
   $('.team-members__imgs,.skills__slider,.account__slider-logos,.account__slider-names,.profession__slider,.projects__slider').addClass('third');
 })
 $('.circles-choose__img.fourth').click(function(event){
-  $('.circles-choose__img').removeClass('active');
-  $('.circles-choose__img.fourth').addClass('active');
+  $('.circles-choose__img,path.people1,path.people2,path.people3,path.people4').removeClass('active');
+  $('.circles-choose__img.fourth,path.people4').addClass('active');
   $('.team-members__imgs,.skills__slider,.account__slider-logos,.account__slider-names,.profession__slider,.projects__slider').removeClass('first second third fourth');
   $('.team-members__imgs,.skills__slider,.account__slider-logos,.account__slider-names,.profession__slider,.projects__slider').addClass('fourth');
 })
 
 
 $('.skills__subtitle').click(function(event){
-  $('.projects').removeClass('active');
-  $('.skills').toggleClass('active');
+  $('.projects').removeClass('open');
+  $('.skills').toggleClass('open');
+  if ($('.skills').hasClass('open') || $('.projects').hasClass('open')) {
+    $('.all-team__left-blocks').addClass('open');
+  } else {
+    $('.all-team__left-blocks').removeClass('open');
+  }
 })
 $('.projects__subtitle').click(function(event){
-  $('.skills').removeClass('active');
-  $('.projects').toggleClass('active');
+  $('.skills').removeClass('open');
+  $('.projects').toggleClass('open');
+  if ($('.skills').hasClass('open') || $('.projects').hasClass('open')) {
+    $('.all-team__left-blocks').addClass('open');
+  } else {
+    $('.all-team__left-blocks').removeClass('open');
+  }
 })

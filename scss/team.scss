@@ -1,38 +1,55 @@
 .all-team {
-  background: url('../img/team.png') bottom right / auto 100% no-repeat, url('../img/light-bg.jpg') center/cover no-repeat;
+  background: url('../img/team/team.png') bottom center / auto 67.5% no-repeat, url('../img/team/bg.jpg') bottom center / auto 100% no-repeat;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  position: relative;
+
+  &__circle {
+    z-index: 1;
+  }
 
   &__peoples-image-group {
     width: 100%;
     height: 100%;
     position: relative;
+    z-index: 2;
+  }
+
+  &__cloud {
+    display: none;
   }
 
   &__title {
     color: #ffa500;
   }
 
+  &__paragraf {
+    color: #fff;
+  }
+
   &__svg-peoples {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 1;
-    height: 100%;
+    bottom: -0.3%;
+    left: 50%;
+    transform: translateX(-49.97%);
+    height: 81%;
 
-    & > g {
+    & > path {
       cursor: pointer;
-      & > * {
-        fill: #ffffff00;
+      fill: #ffffff00;
+
+      &.active {
+        stroke: #ffa500;
+        stroke-width: 5px;
       }
-      &:hover > * {
-        fill: #ffffff7e;
+
+      &.hover {
+        animation: 1.7s ease-in-out 0s infinite reverse both running borderColorsTeamSvg;
+        stroke-width: 5px;
       }
     }
   }
-
-  &__container {}
 
   &__block-name {
     position: absolute;
@@ -40,6 +57,10 @@
     left: 50px;
     z-index: 2;
     max-width: 400px;
+
+    &.none {
+      display: none;
+    }
   }
 
   &__name {
@@ -63,58 +84,28 @@
       opacity: 0;
     }
   }
-}
-
-.team-members {
-  position: relative;
-  height: 100%;
-  background: url('../img/bg-person.jpg') center/cover no-repeat;
-
-  &__block-for-slider-imgs {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  &__imgs {
-    width: 400%;
-    display: flex;
-    align-items: end;
-    justify-content: space-around;
-
-    &.second {
-      transform: translateX(-25%);
-    }
-    &.third {
-      transform: translateX(-50%);
-    }
-    &.fourth {
-      transform: translateX(-75%);
-    }
-  }
-
-  &__img {
-    height: 70%;
-  }
-
-  &__container {
-    position: relative;
-    height: 100%;
-    z-index: 1;
-  }
 
   &__circles-choose {
     position: absolute;
     bottom: 30px;
     right: 50px;
+    z-index: 2;
+  }
+
+  &__left-blocks {
+    position: absolute;
+    top: 130px;
+    left: -450px;
+    z-index: 3;
+
+    &.active {
+      left: 50px;
+    }
   }
 }
 
 .account {
-  padding: 30px 0;
+  padding-bottom: 30px;
   display: flex;
   align-items: center;
 
@@ -155,6 +146,7 @@
 
   &__slider-names {
     display: flex;
+    align-items: center;
     width: 400%;
 
     &.second {
@@ -296,13 +288,21 @@
 }
 
 .projects {
+  &.for-mobile {
+    display: none;
+  }
   position: absolute;
   top: 130px;
-  right: 50px;
+  z-index: 3;
   width: 400px;
   padding: 10px;
   background: #c8c8c880;
   border-radius: 30px;
+  right: -400px;
+
+  &.active {
+    right: 50px;
+  }
 
   &__subtitle {
     color: #6495ED;
@@ -411,32 +411,42 @@
 .circles-choose {
 
   &__img {
+    display: inline-block;
     cursor: pointer;
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     margin-right: 10px;
     border-radius: 50%;
+    transition: all 1s ease-out;
     border: 0px solid #ffa500;
+    overflow: hidden;
     
     &:last-child {
       margin-right: 0;
     }
 
-    &.active, &:hover {
+    &.active {
       border: 5px solid #ffa500;
+    }
+
+    &.hover {
+      animation: 1.7s ease-in-out 0s infinite reverse both running borderColorsTeamCircle5px;
+    }
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
     }
   }
 }
 
 @media (max-width: 1100px) {
-  /* .container {
-    padding: 0 20px;
-  } */
 
   .all-team {
 
     &__block-name {
-      top: 90px;
+      top: 115px;
       left: 20px;
     }
 
@@ -450,22 +460,6 @@
       margin-bottom: 5px;
       line-height: 20px;
     }
-  }
-
-  .team-members {
-
-    &__container {
-      padding-top: 15px;
-    }
-  
-    &__imgs {
-      display: flex;
-      justify-content: space-around;
-    }
-
-    &__img {
-      max-width: 300px;
-    }
 
     &__circles-choose {
       right: 20px;
@@ -474,7 +468,7 @@
   }
   
   .account {
-    padding: 20px 0;
+    padding-bottom: 20px;
 
     &__container-for-slider-logos {
       width: 50px;
@@ -488,7 +482,7 @@
 
     &__container-for-slider-names {
       margin-left: 10px;
-      width: 250px;
+      width: 190px;
     }
   }
   
@@ -510,9 +504,13 @@
   }
   
   .projects {
-    top: 20px;
-    right: 20px;
+    top: 115px;
     width: 250px;
+    right: -250px;
+
+    &.active {
+      right: 20px;
+    }
 
     &__subtitle {
       margin: 0 0 10px 0;
@@ -536,19 +534,16 @@
   .circles-choose {
 
     &__img {
-      cursor: pointer;
       width: 70px;
       height: 70px;
       margin-right: 10px;
-      border-radius: 50%;
-      border: 0px solid #ffa500;
-      
-      &:last-child {
-        margin-right: 0;
+  
+      &.active {
+        border: 3px solid #ffa500;
       }
 
-      &.active, &:hover {
-        border: 3px solid #ffa500;
+      &.hover {
+        animation: 1.7s ease-in-out 0s infinite reverse both running borderColorsTeamCircle3px;
       }
     }
   }
@@ -557,22 +552,6 @@
 @media (max-width: 767px) {
   .circle {
     display: none !important;
-  }
-  
-  .team-members {
-    background: url('../img/bg-person-rotate.jpg') center/cover no-repeat;
-
-    &__circles-choose {
-      right: 0;
-      width: 100%;
-      padding: 0 20px;
-      bottom: 10px;
-    }
-
-    &__img {
-      padding: 0 20px;
-      width: 25%;
-    }
   }
 
   .account {
@@ -625,8 +604,10 @@
     position: relative;
     width: 100%;
     height: 62px;
+    margin-bottom: 10px;
     overflow: hidden;
     background: #c8c8c8cc;
+    transition: all 0.2s ease;
 
     &__subtitle {
       padding: 10px 10px 20px 5px;
@@ -641,8 +622,9 @@
       }
     }
 
-    &.active {
-      height: calc(100% - 245px);
+    &.open {
+      height: fit-content;
+      max-height: calc(100% - 155px);
 
       .skills__subtitle:after {
         transition: all 0.2s ease;
@@ -656,8 +638,13 @@
   }
 
   .projects {
-    position: static;
-    margin-top: 10px;
+    display: none;
+    &.for-mobile {
+      display: block;
+    }
+    position: relative;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 62px;
     overflow: hidden;
@@ -677,9 +664,14 @@
     }
 
     &__container-for-slider {
-      height: calc(100% - 62px);
+      max-height: calc(100% - 152px);
+      overflow: hidden;
       border-radius: 25px;
       overflow-y: auto;
+    }
+
+    &__slider-item {
+      overflow: scroll;
     }
 
     &__item {
@@ -694,8 +686,9 @@
       transform: translateY(-50%);
     }
 
-    &.active {
-      height: calc(100% - 245px);
+    &.open {
+      height: fit-content;
+      max-height: calc(100% - 155px);
 
       .projects__subtitle:after {
         transition: all 0.2s ease;
@@ -705,10 +698,29 @@
   }
   
   .all-team {
-    background: url('../img/team.png') bottom right / auto 50% no-repeat, url('../img/light-bg.jpg') center/cover no-repeat;
+    background: url('../img/team/team.png') bottom center / auto 40% no-repeat, url('../img/team/bg.jpg') bottom center / auto 100% no-repeat;
+
+    &__circles-choose {
+      right: 0;
+      width: 100%;
+      padding: 0 20px;
+      bottom: 10px;
+    }
 
     &__svg-peoples {
-      height: 50%;
+      bottom: -0.2%;
+      height: 48.1%;
+    }
+
+    &__cloud {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      &.none {
+        display: none;
+      }
     }
 
     &__block-description {
@@ -723,5 +735,57 @@
     &__name {
       display: none !important;
     }
+
+    &__left-blocks {
+      position: absolute;
+      top: 115px;
+      left: calc(-100% - 40px);
+      width: calc(100% - 40px);
+      max-height: calc(100% - 205px);
+
+      &.active {
+        left: 20px;
+
+        &.open {
+          height: calc(100% - 205px);
+        }
+      }
+    }
+  }
+}
+
+@keyframes borderColorsTeamSvg {
+  0% {
+    stroke: #ffa500;
+  }
+  50% {
+    stroke: #fff;
+  }
+  100% {
+    stroke: #ffa500;
+  }
+}
+
+@keyframes borderColorsTeamCircle5px {
+  0% {
+    border: 5px solid #ffa500;
+  }
+  50% {
+    border: 5px solid #fff;
+  }
+  100% {
+    border: 5px solid #ffa500;
+  }
+}
+
+@keyframes borderColorsTeamCircle3px {
+  0% {
+    border: 3px solid #ffa500;
+  }
+  50% {
+    border: 3px solid #fff;
+  }
+  100% {
+    border: 3px solid #ffa500;
   }
 }
