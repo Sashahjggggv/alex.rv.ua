@@ -585,7 +585,7 @@
     transform: rotate(180deg);
   }
   .all-team {
-    background: url("../img/team/team.png") bottom center/auto 40% no-repeat, url("../img/team/bg.jpg") bottom center/auto 100% no-repeat;
+    background: url("../img/team/team.png") bottom center/100% auto no-repeat, url("../img/team/bg.jpg") bottom center/auto 100% no-repeat;
   }
   .all-team__circles-choose {
     right: 0;
@@ -595,7 +595,9 @@
   }
   .all-team__svg-peoples {
     bottom: -0.2%;
-    height: 48.1%;
+    /* height: 48.1%; */
+    height: auto;
+    width: 100%;
   }
   .all-team__cloud {
     display: block;

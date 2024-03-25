@@ -1,5 +1,5 @@
 $('path').click(function(){
-  $('.all-team__block-name,.all-team__cloud').addClass('none');
+  $('.all-team__block-name').addClass('none');
   $('.all-team__left-blocks,.all-team__projects').addClass('active');
 })
 $('.circles-choose__img').click(function(){
