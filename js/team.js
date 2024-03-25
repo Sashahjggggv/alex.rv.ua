@@ -194,3 +194,5 @@ $('.projects__subtitle').click(function(event){
     $('.all-team__left-blocks').removeClass('open');
   }
 })
+
+screen.orientation.lock("portrait");
