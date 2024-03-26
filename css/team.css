@@ -632,7 +632,10 @@
     top: 115px;
     left: calc(-100% - 40px);
     width: calc(100% - 40px);
-    max-height: calc(100% - 205px);
+    height: -moz-fit-content;
+    height: fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
   }
   .all-team__left-blocks.active {
     left: 20px;

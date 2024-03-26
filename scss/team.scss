@@ -758,7 +758,8 @@
       top: 115px;
       left: calc(-100% - 40px);
       width: calc(100% - 40px);
-      max-height: calc(100% - 205px);
+      height: fit-content;
+      max-height: fit-content;
 
       &.active {
         left: 20px;
