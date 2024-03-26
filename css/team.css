@@ -4,6 +4,7 @@
   height: 100%;
   overflow: hidden;
   position: relative;
+  margin-bottom: 20px;
 }
 .all-team__circle {
   z-index: 1;
@@ -15,7 +16,10 @@
   z-index: 2;
 }
 .all-team__cloud {
-  display: none;
+  cursor: url(../img/cursor-click.svg), pointer;
+}
+.all-team__cloud.none {
+  transform: scale(0);
 }
 .all-team__title {
   color: #ffa500;
@@ -31,7 +35,7 @@
   height: 81%;
 }
 .all-team__svg-peoples > path {
-  cursor: pointer;
+  cursor: url(../img/cursor-click.svg), pointer;
   fill: rgba(255, 255, 255, 0);
 }
 .all-team__svg-peoples > path.active {
@@ -305,7 +309,7 @@
   justify-content: center;
   padding: 0 10px;
   overflow: hidden;
-  cursor: pointer;
+  cursor: url(../img/cursor-click.svg), pointer;
 }
 .projects__item:hover .projects__bg {
   transform: scale(1.1);
@@ -353,7 +357,7 @@
 
 .circles-choose__img {
   display: inline-block;
-  cursor: pointer;
+  cursor: url(../img/cursor-click.svg), pointer;
   width: 80px;
   height: 80px;
   margin-right: 10px;
@@ -395,6 +399,13 @@
     right: 20px;
     bottom: 20px;
   }
+  .all-team__left-blocks {
+    top: 115px;
+    height: calc(100% - 135px);
+  }
+  .all-team__left-blocks.active {
+    left: 20px;
+  }
   .account {
     padding-bottom: 20px;
   }
@@ -419,6 +430,8 @@
   }
   .skills {
     width: 250px;
+    max-height: calc(100% - 145px);
+    overflow: auto;
   }
   .skills__subtitle {
     margin: 0 0 10px 0;
@@ -427,6 +440,8 @@
     top: 115px;
     width: 250px;
     right: -250px;
+    max-height: calc(100% - 230px);
+    overflow: auto;
   }
   .projects.active {
     right: 20px;
@@ -585,7 +600,7 @@
     transform: rotate(180deg);
   }
   .all-team {
-    background: url("../img/team/team.png") bottom center/100% auto no-repeat, url("../img/team/bg.jpg") bottom center/auto 100% no-repeat;
+    background: url("../img/team/team.png") bottom center/96% auto no-repeat, url("../img/team/bg.jpg") bottom center/auto 100% no-repeat;
   }
   .all-team__circles-choose {
     right: 0;
@@ -597,16 +612,7 @@
     bottom: -0.2%;
     /* height: 48.1%; */
     height: auto;
-    width: 100%;
-  }
-  .all-team__cloud {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  .all-team__cloud.none {
-    display: none;
+    width: 96%;
   }
   .all-team__block-description.opacity {
     opacity: 1;
@@ -616,6 +622,10 @@
   }
   .all-team__name {
     display: none !important;
+  }
+  .all-team__block-name.none {
+    display: block;
+    left: 100%;
   }
   .all-team__left-blocks {
     position: absolute;

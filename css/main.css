@@ -42,7 +42,7 @@ input::-ms-clear {
 }
 
 button {
-  cursor: pointer;
+  cursor: url(../img/cursor-click.svg), pointer;
 }
 
 button::-moz-focus-inner {
@@ -51,10 +51,12 @@ button::-moz-focus-inner {
 }
 
 a, a:visited {
+  cursor: url(../img/cursor-click.svg), pointer;
   text-decoration: none;
 }
 
 a:hover {
+  cursor: url(../img/cursor-click.svg), pointer;
   text-decoration: none;
 }
 
@@ -74,6 +76,8 @@ h1, h2, h3, h4, h5, h6 {
 /* @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap'); */
 body {
   font-family: "Ubuntu", sans-serif;
+  background: url(../img/dark-background.webp) center/cover;
+  background-color: #181c27;
 }
 
 *,
@@ -103,7 +107,8 @@ body {
 }
 
 .circle {
-  display: none;
+  transform: scale(0);
+  display: flex;
   position: absolute;
   width: 50px;
   height: 50px;
@@ -123,7 +128,7 @@ body {
   color: #ffffff;
 }
 .circle.active {
-  display: flex;
+  transform: scale(1);
 }
 
 .header {
@@ -366,7 +371,7 @@ body {
 }
 .header__btn-burger {
   display: none;
-  cursor: pointer;
+  cursor: url(../img/cursor-click.svg), pointer;
   position: relative;
   margin-left: 10px;
   width: 45px;
@@ -396,6 +401,9 @@ body {
 .header__btn-burger.active .header__burger-anim-logo > span:last-child {
   top: 8.5px;
   transform: rotate(-45deg);
+}
+.header__btn-burger.active.pc-active {
+  display: flex;
 }
 .header__burger-show {
   position: absolute;
@@ -569,7 +577,7 @@ body {
   -webkit-backdrop-filter: blur(12px);
           backdrop-filter: blur(12px);
   padding: 30px 0;
-  margin: 5px 50px;
+  margin: 20px 50px;
   border-radius: 30px;
 }
 .footer__container {
@@ -811,7 +819,8 @@ body {
   transform: scale(0.9);
 }
 .footer__marginb {
-  height: 30px;
+  height: 1px;
+  background: none;
 }
 
 @media (max-width: 1100px) {

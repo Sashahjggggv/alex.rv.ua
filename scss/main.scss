@@ -3,6 +3,8 @@
 
 body {
   font-family: 'Ubuntu', sans-serif;
+  background: url(../img/dark-background.webp) center/cover;
+  background-color: #181c27;
 }
 
 *,
@@ -32,7 +34,8 @@ body {
 }
 
 .circle {
-  display: none;
+  transform: scale(0);
+  display: flex;
   position: absolute;
   width: 50px;
   height: 50px;
@@ -51,7 +54,7 @@ body {
     color: #ffffff;
   }
   &.active {
-    display: flex;
+    transform: scale(1);
   }
 }
 
@@ -322,7 +325,7 @@ body {
 
   &__btn-burger {
     display: none;
-    cursor: pointer;
+    cursor: url(../img/cursor-click.svg), pointer;
     position: relative;
     margin-left: 10px;
     width: 45px;
@@ -353,6 +356,10 @@ body {
             transform: rotate(-45deg);
           }
         }
+      }
+
+      &.pc-active {
+        display: flex;
       }
     }
   }
@@ -539,7 +546,7 @@ body {
   background: #181c2780;
   backdrop-filter: blur(12px);
   padding: 30px 0;
-  margin: 5px 50px;
+  margin: 20px 50px;
   border-radius: 30px;
 
   &__container {
@@ -824,7 +831,8 @@ body {
   }
 
   &__marginb {
-    height: 30px;
+    height: 1px;
+    background: none;
   }
 }
 

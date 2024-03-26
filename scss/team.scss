@@ -4,6 +4,7 @@
   height: 100%;
   overflow: hidden;
   position: relative;
+  margin-bottom: 20px;
 
   &__circle {
     z-index: 1;
@@ -17,7 +18,11 @@
   }
 
   &__cloud {
-    display: none;
+    cursor: url(../img/cursor-click.svg), pointer;
+
+    &.none {
+      transform: scale(0);
+    }
   }
 
   &__title {
@@ -36,7 +41,7 @@
     height: 81%;
 
     & > path {
-      cursor: pointer;
+      cursor: url(../img/cursor-click.svg), pointer;
       fill: #ffffff00;
 
       &.active {
@@ -355,7 +360,7 @@
     justify-content: center;
     padding: 0 10px;
     overflow: hidden;
-    cursor: pointer;
+    cursor: url(../img/cursor-click.svg), pointer;
 
     &:hover {
 
@@ -412,7 +417,7 @@
 
   &__img {
     display: inline-block;
-    cursor: pointer;
+    cursor: url(../img/cursor-click.svg), pointer;
     width: 80px;
     height: 80px;
     margin-right: 10px;
@@ -465,6 +470,15 @@
       right: 20px;
       bottom: 20px;
     }
+
+    &__left-blocks {
+      top: 115px;
+      height: calc(100% - 135px);
+
+      &.active {
+        left: 20px;
+      }
+    }
   }
   
   .account {
@@ -497,6 +511,8 @@
 
   .skills {
     width: 250px;
+    max-height: calc(100% - 145px);
+    overflow: auto;
 
     &__subtitle {
       margin: 0 0 10px 0;
@@ -507,6 +523,8 @@
     top: 115px;
     width: 250px;
     right: -250px;
+    max-height: calc(100% - 230px);
+    overflow: auto;
 
     &.active {
       right: 20px;
@@ -698,7 +716,7 @@
   }
   
   .all-team {
-    background: url('../img/team/team.png') bottom center / 100% auto no-repeat, url('../img/team/bg.jpg') bottom center / auto 100% no-repeat;
+    background: url('../img/team/team.png') bottom center / 96% auto no-repeat, url('../img/team/bg.jpg') bottom center / auto 100% no-repeat;
 
     &__circles-choose {
       right: 0;
@@ -711,18 +729,7 @@
       bottom: -0.2%;
       /* height: 48.1%; */
       height: auto;
-      width: 100%;
-    }
-
-    &__cloud {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      &.none {
-        display: none;
-      }
+      width: 96%;
     }
 
     &__block-description {
@@ -736,6 +743,14 @@
 
     &__name {
       display: none !important;
+    }
+
+    &__block-name {
+  
+      &.none {
+        display: block;
+        left: 100%;
+      }
     }
 
     &__left-blocks {

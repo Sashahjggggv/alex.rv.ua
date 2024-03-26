@@ -304,7 +304,7 @@ body {
   fill: #000;
 }
 .view__animated-iland {
-  cursor: pointer;
+  cursor: url(../img/cursor-click.svg), pointer;
   position: absolute;
   top: 3.2%;
   left: 50%;
@@ -383,10 +383,10 @@ body {
   transform: translateX(-50%);
   background: transparent;
   border-radius: 10px;
-  cursor: pointer;
+  cursor: url(../img/cursor-click.svg), pointer;
 }
 .slider * {
-  cursor: pointer;
+  cursor: url(../img/cursor-click.svg), pointer;
 }
 .slider__value {
   position: relative;
@@ -448,7 +448,7 @@ body {
   height: 50px;
   border-radius: 50%;
   background: transparent;
-  cursor: pointer;
+  cursor: url(../img/cursor-click.svg), pointer;
   border: none;
   box-shadow: none;
 }
@@ -458,7 +458,7 @@ body {
   height: 50px;
   border-radius: 50%;
   background: transparent;
-  cursor: pointer;
+  cursor: url(../img/cursor-click.svg), pointer;
   border: none;
   box-shadow: none;
 }
