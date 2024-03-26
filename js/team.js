@@ -7,7 +7,7 @@ $('.circles-choose__img').click(function(){
   $('.all-team__left-blocks,.all-team__projects,.header__btn-burger,.header__burger-show,.header__burger-hide').addClass('active');
   $('.header__btn-burger').addClass('pc-active');
 })
-$('.header__burger-hide').click(function(event){
+$('.header__burger-hide,.header__contacts').click(function(event){
   $('.all-team__cloud,.all-team__block-name').removeClass('none');
   $('.all-team__skills,.all-team__projects').removeClass('open');
   $('.all-team__left-blocks,path,.circles-choose__img,.all-team__projects').removeClass('active');

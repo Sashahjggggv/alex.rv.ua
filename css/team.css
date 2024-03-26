@@ -634,8 +634,6 @@
     width: calc(100% - 40px);
     height: -moz-fit-content;
     height: fit-content;
-    max-height: -moz-fit-content;
-    max-height: fit-content;
   }
   .all-team__left-blocks.active {
     left: 20px;
