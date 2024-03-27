@@ -1,11 +1,13 @@
 $('path').click(function(){
   $('.all-team__block-name,.all-team__cloud').addClass('none');
   $('.all-team__left-blocks,.all-team__projects,.header__btn-burger,.header__burger-show,.header__burger-hide').addClass('active');
+  $('header.header').addClass('sticky');
 })
 $('.circles-choose__img').click(function(){
   $('.all-team__block-name,.all-team__cloud').addClass('none');
   $('.all-team__left-blocks,.all-team__projects,.header__btn-burger,.header__burger-show,.header__burger-hide').addClass('active');
   $('.header__btn-burger').addClass('pc-active');
+  $('header.header').addClass('sticky');
 })
 $('.header__burger-hide,.header__contacts').click(function(event){
   $('.all-team__cloud,.all-team__block-name').removeClass('none');

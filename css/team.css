@@ -523,6 +523,7 @@
     overflow: hidden;
     background: rgba(200, 200, 200, 0.8);
     transition: all 0.2s ease;
+    max-height: 62px;
   }
   .skills__subtitle {
     padding: 10px 10px 20px 5px;
@@ -556,6 +557,7 @@
     height: 62px;
     overflow: hidden;
     background: rgba(200, 200, 200, 0.8);
+    max-height: 62px;
   }
   .projects.for-mobile {
     display: block;
