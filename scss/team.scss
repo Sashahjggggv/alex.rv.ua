@@ -205,7 +205,7 @@
   &__title {
     text-align: center;
     margin: 0;
-    color: #ffa500;
+    color: #6495ed;
   }
 }
 
@@ -293,9 +293,6 @@
 }
 
 .projects {
-  &.for-mobile {
-    display: none;
-  }
   position: absolute;
   top: 130px;
   z-index: 3;
@@ -304,6 +301,10 @@
   background: #c8c8c880;
   border-radius: 30px;
   right: -400px;
+
+  &.for-mobile {
+    display: none;
+  }
 
   &.active {
     right: 50px;
@@ -577,21 +578,25 @@
     top: 0;
     left: 0;
     z-index: 1;
-    padding: 5px 0 10px 0;
+    padding: 10px 0;
     width: 100%;
     
     &__container-for-slider-logos {
-      display: none;
+      position: absolute;
+      top: 100%;
+      left: 10px;
+      transform: translateY(-50%);
     }
 
     &__container-for-slider-names {
       margin-left: 0;
-      width: 100%;
+      width: calc(100%-70px);
     }
 
     &__name {
-      text-align: center;
-      font-size: 25px;
+      text-align: right;
+      font-size: 24px;
+      padding-right: 15px;
     }
   }
 
@@ -605,17 +610,34 @@
     width: 100%;
     padding: 40px 0 10px 0;
 
-    &:after {
+    &__container-for-slider {
+      max-width: 85%;
+    }
+
+    &__slider-item {
+      display: flex;
+      justify-content: end;
+      padding-right: 10px;
+    }
+
+    &__title {
+      border: 4px solid #6495ed;
+      width: fit-content;
+      border-radius: 50px;
+      padding: 5px 10px;
+    }
+
+    /* &:after {
       content: '';
       display: block;
       width: 70%;
       height: 3px;
-      background: #ffa500;
+      background: #6495ED;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%,-50%);
-    }
+    } */
   }
 
   .skills {
@@ -624,9 +646,9 @@
     height: 62px;
     margin-bottom: 10px;
     overflow: hidden;
-    background: #c8c8c8cc;
     transition: all 0.2s ease;
     max-height: 62px;
+    border: 2px solid #6495ED;
 
     &__subtitle {
       padding: 10px 10px 20px 5px;
@@ -664,8 +686,8 @@
     width: 100%;
     height: 62px;
     overflow: hidden;
-    background: #c8c8c8cc;
     max-height: 62px;
+    border: 2px solid #6495ED;
 
     &.for-mobile {
       display: block;
