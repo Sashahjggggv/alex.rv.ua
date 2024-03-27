@@ -72,9 +72,11 @@
     display: none;
     transition: all 0.15s ease;
     opacity: 0;
+
     &.active {
       display: block;
     }
+
     &.opacity {
       opacity: 1;
     }
@@ -82,9 +84,11 @@
 
   &__block-description {
     transition: all 0.15s ease;
+
     &.none {
       display: none;
     }
+
     &.opacity {
       opacity: 0;
     }
@@ -248,15 +252,14 @@
   &__slider-item {
     width: 25%;
   }
-  
-  &__level {}
 }
 
 .level-line {
   margin-bottom: 10px;
-  background: #bebebeb3;
+  background: #181c2780;
   border-radius: 25px;
   padding: 10px 12px;
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -578,25 +581,26 @@
     top: 0;
     left: 0;
     z-index: 1;
-    padding: 10px 0;
+    padding: 10px 10px;
     width: 100%;
-    
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+
     &__container-for-slider-logos {
-      position: absolute;
-      top: 100%;
-      left: 10px;
-      transform: translateY(-50%);
+      align-self: center;
     }
 
     &__container-for-slider-names {
       margin-left: 0;
-      width: calc(100%-70px);
+      width: calc(100% - 50px);
     }
 
     &__name {
       text-align: right;
       font-size: 24px;
-      padding-right: 15px;
+      white-space: nowrap
     }
   }
 
@@ -609,6 +613,8 @@
     position: relative;
     width: 100%;
     padding: 40px 0 10px 0;
+    display: flex;
+    justify-content: end;
 
     &__container-for-slider {
       max-width: 85%;
@@ -665,17 +671,13 @@
 
     &.open {
       height: fit-content;
-      max-height: calc(100% - 155px);
+      max-height: calc(100% - 172px);
 
       .skills__subtitle:after {
         transition: all 0.2s ease;
         transform: rotate(180deg);
       }
     }
-  }
-
-  .level-line {
-    background: #a8a8a8c9;
   }
 
   .projects {
@@ -707,7 +709,7 @@
     }
 
     &__container-for-slider {
-      max-height: calc(100% - 152px);
+      max-height: calc(100% - 172px);
       overflow: hidden;
       border-radius: 25px;
       overflow-y: auto;
@@ -719,6 +721,20 @@
 
     &__item {
       height: 150px;
+      align-items: end;
+    }
+
+    &__bg-blur {
+      display: none;
+    }
+
+    &__name {
+      margin: 10px 0;
+      width: 100%;
+      background: #181c2780;
+      color: #ffa500;
+      padding: 10px;
+      border-radius: 20px;
     }
 
     &__arrow-svg {

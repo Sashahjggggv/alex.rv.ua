@@ -213,9 +213,10 @@
 .skills__slider-item {
   width: 25%;
 }
+
 .level-line {
   margin-bottom: 10px;
-  background: rgba(190, 190, 190, 0.7019607843);
+  background: rgba(24, 28, 39, 0.5019607843);
   border-radius: 25px;
   padding: 10px 12px;
 }
@@ -481,23 +482,24 @@
     top: 0;
     left: 0;
     z-index: 1;
-    padding: 10px 0;
+    padding: 10px 10px;
     width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
   }
   .account__container-for-slider-logos {
-    position: absolute;
-    top: 100%;
-    left: 10px;
-    transform: translateY(-50%);
+    align-self: center;
   }
   .account__container-for-slider-names {
     margin-left: 0;
-    width: 100%;
+    width: calc(100% - 50px);
   }
   .account__name {
     text-align: right;
-    font-size: 25px;
-    padding-right: 20px;
+    font-size: 24px;
+    white-space: nowrap;
   }
   .circles-choose {
     display: flex;
@@ -507,6 +509,8 @@
     position: relative;
     width: 100%;
     padding: 40px 0 10px 0;
+    display: flex;
+    justify-content: end;
     /* &:after {
       content: '';
       display: block;
@@ -518,6 +522,9 @@
       left: 50%;
       transform: translate(-50%,-50%);
     } */
+  }
+  .profession__container-for-slider {
+    max-width: 85%;
   }
   .profession__slider-item {
     display: flex;
@@ -555,14 +562,11 @@
   .skills.open {
     height: -moz-fit-content;
     height: fit-content;
-    max-height: calc(100% - 155px);
+    max-height: calc(100% - 172px);
   }
   .skills.open .skills__subtitle:after {
     transition: all 0.2s ease;
     transform: rotate(180deg);
-  }
-  .level-line {
-    background: rgba(168, 168, 168, 0.7882352941);
   }
   .projects {
     display: none;
@@ -590,7 +594,7 @@
     content: url("../img/up.svg");
   }
   .projects__container-for-slider {
-    max-height: calc(100% - 152px);
+    max-height: calc(100% - 172px);
     overflow: hidden;
     border-radius: 25px;
     overflow-y: auto;
@@ -600,6 +604,18 @@
   }
   .projects__item {
     height: 150px;
+    align-items: end;
+  }
+  .projects__bg-blur {
+    display: none;
+  }
+  .projects__name {
+    margin: 10px 0;
+    width: 100%;
+    background: rgba(24, 28, 39, 0.5019607843);
+    color: #ffa500;
+    padding: 10px;
+    border-radius: 20px;
   }
   .projects__arrow-svg {
     display: block;
@@ -611,7 +627,7 @@
   .projects.open {
     height: -moz-fit-content;
     height: fit-content;
-    max-height: calc(100% - 155px);
+    max-height: calc(100% - 180px);
   }
   .projects.open .projects__subtitle:after {
     transition: all 0.2s ease;
